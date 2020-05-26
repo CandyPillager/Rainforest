@@ -1,0 +1,38 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Mariell Hoversholm <proximyst@proximyst.com>
+Date: Tue, 26 May 2020 20:16:21 +0200
+Subject: [PATCH] Rainforest brand change
+
+---
+ pom.xml | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
+
+diff --git a/pom.xml b/pom.xml
+index 2eb1e40d910aaa100158b682d1eaffb6ca6b915a..1def7753efe23c88297ac899da09f47d6962da6b 100644
+--- a/pom.xml
++++ b/pom.xml
+@@ -3,18 +3,18 @@
+          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+     <modelVersion>4.0.0</modelVersion>
+     <parent>
+-        <groupId>com.destroystokyo.paper</groupId>
+-        <artifactId>paper-parent</artifactId>
++        <groupId>com.proximyst.rainforest</groupId> <!-- Rainforest -->
++        <artifactId>rainforest-parent</artifactId> <!-- Rainforest -->
+         <version>dev-SNAPSHOT</version>
++        <relativePath>../pom.xml</relativePath> <!-- Rainforest -->
+     </parent>
+ 
+-    <groupId>com.destroystokyo.paper</groupId>
+-    <artifactId>paper-api</artifactId>
++    <artifactId>rainforest-api</artifactId> <!-- Rainforest -->
+     <version>1.16.1-R0.1-SNAPSHOT</version>
+     <packaging>jar</packaging>
+ 
+-    <name>Paper-API</name>
+-    <url>https://github.com/PaperMC/Paper</url>
++    <name>Rainforest-API</name> <!-- Rainforest -->
++    <url>https://github.com/Proximyst/Rainforest</url> <!-- Rainforest -->
+     <description>An enhanced plugin API for Minecraft servers.</description>
+ 
+     <properties>

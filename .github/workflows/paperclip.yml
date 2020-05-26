@@ -1,0 +1,37 @@
+# Thanks to Spottedleaf for this.
+# https://github.com/Spottedleaf/Tuinity/blob/master/.github/workflows/maven.yml
+
+name: Build Paperclip
+on: push
+
+jobs:
+    paperclip:
+        runs-on: ubuntu-latest
+        strategy:
+            matrix:
+                java: [14, 8]
+
+            fail-fast: true
+        steps:
+            - uses: actions/checkout@v2.3.1
+            - name: JDK ${{ matrix.java }}
+              uses: actions/setup-java@v1.3.0
+              with:
+                  java-version: ${{ matrix.java }}
+            - name: Caching maven repo
+              uses: actions/cache@v2.0.0
+              with:
+                  path: ~/.m2/repository
+                  key: ${{ runner.os }}-paperclip-${{ hashFiles('**/pom.xml') }}
+                  restore-keys: ${{ runner.os }}-paperclip
+            - name: Create paperclip
+              run: |
+                  git config --global user.email "github-actions@example.com"
+                  git config --global user.name "Github Actions"
+                  git submodule update --init --recursive
+                  ./rainforest jar
+            - name: Upload paperclip
+              uses: actions/upload-artifact@v2
+              with:
+                  name: Rainforest-JDK${{ matrix.java }}
+                  path: rainforest-paperclip.jar

@@ -1,0 +1,22 @@
+<project>
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.proximyst.rainforest</groupId>
+    <artifactId>rainforest-parent</artifactId>
+    <version>dev-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>Rainforest (Parent)</name>
+
+    <repositories>
+        <repository>
+            <id>aikar</id>
+            <url>https://repo.aikar.co/content/groups/aikar/</url>
+        </repository>
+    </repositories>
+
+    <modules>
+        <module>Rainforest-API</module>
+        <module>Rainforest-MojangAPI</module>
+        <module>Rainforest-Server</module>
+    </modules>
+</project>

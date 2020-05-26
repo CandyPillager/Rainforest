@@ -1,0 +1,28 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Mariell Hoversholm <proximyst@proximyst.com>
+Date: Sun, 21 Jun 2020 01:06:20 +0200
+Subject: [PATCH] Add Rainforest config
+
+---
+ src/main/java/org/bukkit/Server.java | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+
+diff --git a/src/main/java/org/bukkit/Server.java b/src/main/java/org/bukkit/Server.java
+index 0653e0ffe96748dc971ec7e8027f8159696adf62..4c1a130849dce046559d21166276dffbc5906857 100644
+--- a/src/main/java/org/bukkit/Server.java
++++ b/src/main/java/org/bukkit/Server.java
+@@ -1438,6 +1438,14 @@ public interface Server extends PluginMessageRecipient {
+         }
+         // Paper end
+ 
++        // Rainforest start
++        @NotNull
++        public org.bukkit.configuration.file.YamlConfiguration getRainforestConfig()
++        {
++            throw new UnsupportedOperationException("Not supported yet.");
++        }
++        // Rainforest end
++
+         /**
+          * Sends the component to the player
+          *
