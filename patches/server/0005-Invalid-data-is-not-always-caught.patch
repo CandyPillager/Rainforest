@@ -1,0 +1,22 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Mariell Hoversholm <proximyst@proximyst.com>
+Date: Fri, 17 Jul 2020 21:42:30 +0200
+Subject: [PATCH] Invalid data is not always caught
+
+---
+ src/main/java/net/minecraft/server/AdvancementDataPlayer.java | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/main/java/net/minecraft/server/AdvancementDataPlayer.java b/src/main/java/net/minecraft/server/AdvancementDataPlayer.java
+index d3387a4e16f81b820d40502d2c46ebb3db88f824..1a26e3c561f7004b10c57fd24a0315b0ec7c5640 100644
+--- a/src/main/java/net/minecraft/server/AdvancementDataPlayer.java
++++ b/src/main/java/net/minecraft/server/AdvancementDataPlayer.java
+@@ -189,7 +189,7 @@ public class AdvancementDataPlayer {
+                     }
+ 
+                 }
+-            } catch (JsonParseException jsonparseexception) {
++            } catch (JsonParseException | NumberFormatException jsonparseexception) { // Rainforest
+                 AdvancementDataPlayer.LOGGER.error("Couldn't parse player advancements in {}", this.f, jsonparseexception);
+             } catch (IOException ioexception) {
+                 AdvancementDataPlayer.LOGGER.error("Couldn't access player advancements in {}", this.f, ioexception);
