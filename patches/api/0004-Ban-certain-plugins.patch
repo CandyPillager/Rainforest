@@ -1,0 +1,59 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Mariell Hoversholm <proximyst@proximyst.com>
+Date: Fri, 17 Jul 2020 21:40:10 +0200
+Subject: [PATCH] Ban certain plugins
+
+---
+ .../java/com/proximyst/rainforest/RainforestUtils.java   | 9 +++++++++
+ src/main/java/org/bukkit/plugin/java/JavaPlugin.java     | 8 +++++++-
+ 2 files changed, 16 insertions(+), 1 deletion(-)
+ create mode 100644 src/main/java/com/proximyst/rainforest/RainforestUtils.java
+
+diff --git a/src/main/java/com/proximyst/rainforest/RainforestUtils.java b/src/main/java/com/proximyst/rainforest/RainforestUtils.java
+new file mode 100644
+index 0000000000000000000000000000000000000000..d6dba47005fe0c828d83db60901412ca0898e108
+--- /dev/null
++++ b/src/main/java/com/proximyst/rainforest/RainforestUtils.java
+@@ -0,0 +1,9 @@
++package com.proximyst.rainforest;
++
++import com.google.common.collect.ImmutableSet;
++
++public final class RainforestUtils {
++  public static final ImmutableSet<String> BANNED_MAIN_CLASSES = ImmutableSet.of(
++      "net.minemora.entitytrackerfixer.EntityTrackerFixer"
++  );
++}
+diff --git a/src/main/java/org/bukkit/plugin/java/JavaPlugin.java b/src/main/java/org/bukkit/plugin/java/JavaPlugin.java
+index 04fa3991f6ce4e9dad804f28fc6c947695857089..df5b5f05dd4398ce8b4e1e40f20edd3e142a7407 100644
+--- a/src/main/java/org/bukkit/plugin/java/JavaPlugin.java
++++ b/src/main/java/org/bukkit/plugin/java/JavaPlugin.java
+@@ -1,6 +1,7 @@
+ package org.bukkit.plugin.java;
+ 
+ import com.google.common.base.Charsets;
++import com.proximyst.rainforest.RainforestUtils;
+ import java.io.File;
+ import java.io.FileOutputStream;
+ import java.io.IOException;
+@@ -24,7 +25,6 @@ import org.bukkit.generator.ChunkGenerator;
+ import org.bukkit.plugin.PluginBase;
+ import org.bukkit.plugin.PluginDescriptionFile;
+ import org.bukkit.plugin.PluginLoader;
+-import org.bukkit.plugin.PluginLogger;
+ import org.jetbrains.annotations.NotNull;
+ import org.jetbrains.annotations.Nullable;
+ 
+@@ -257,6 +257,12 @@ public abstract class JavaPlugin extends PluginBase {
+      */
+     protected final void setEnabled(final boolean enabled) {
+         if (isEnabled != enabled) {
++            // Rainforest start
++            if (RainforestUtils.BANNED_MAIN_CLASSES.contains(getDescription().getMain())) {
++                getLogger().warning(getDescription().getName() + " is unsupported on Rainforest.");
++                return;
++            }
++            // Rainforest end
+             isEnabled = enabled;
+ 
+             if (isEnabled) {

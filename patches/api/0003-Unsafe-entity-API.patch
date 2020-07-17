@@ -1,0 +1,114 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Mariell Hoversholm <proximyst@proximyst.com>
+Date: Fri, 17 Jul 2020 21:34:37 +0200
+Subject: [PATCH] Unsafe entity API
+
+---
+ src/main/java/org/bukkit/entity/Entity.java | 55 +++++++++++++++++++++
+ src/main/java/org/bukkit/entity/Player.java | 24 +++++++++
+ 2 files changed, 79 insertions(+)
+
+diff --git a/src/main/java/org/bukkit/entity/Entity.java b/src/main/java/org/bukkit/entity/Entity.java
+index 7808ade92ccd3553056c57cdf77464fb8bdf9312..1e8ef65cc025ee7a65ce663754faa01a5a7f8b72 100644
+--- a/src/main/java/org/bukkit/entity/Entity.java
++++ b/src/main/java/org/bukkit/entity/Entity.java
+@@ -695,4 +695,59 @@ public interface Entity extends Metadatable, CommandSender, Nameable, Persistent
+      */
+     public boolean isInLava();
+     // Paper end
++
++    // Rainforest start
++    /**
++     * @return Unsafe API.
++     */
++    @NotNull
++    Unsafe getUnsafeApi();
++
++    /**
++     * Unsafe API for {@link Entity entities}.
++     */
++    interface Unsafe {
++        /**
++         * Rotate without teleporting.
++         *
++         * @param yaw New yaw.
++         * @param pitch New pitch.
++         */
++        void rotate(float yaw, float pitch);
++
++        /**
++         * This should only be needed on <i>some</i> living entities like the ender dragon.
++         *
++         * @param yaw New yaw, to be clamped.
++         * @param pitch New pitch, to be clamped.
++         */
++        default void clampedRotate(float yaw, float pitch) {
++            while (yaw < 180F) {
++                yaw += 360F;
++            }
++            while (yaw >= 180F) {
++                yaw -= 360F;
++            }
++
++            while (pitch < 180F) {
++                pitch += 360F;
++            }
++            while (pitch >= 180F) {
++                pitch -= 360F;
++            }
++
++            rotate(yaw, pitch);
++        }
++
++        /**
++         * @param invisibility New invisibility.
++         */
++        void setInvisible(boolean invisibility);
++
++        /**
++         * @param invulnerablity New invulnerability.
++         */
++        void setInvulnerable(boolean invulnerablity);
++    }
++    // Rainforest end
+ }
+diff --git a/src/main/java/org/bukkit/entity/Player.java b/src/main/java/org/bukkit/entity/Player.java
+index 2eb3121386e3bc5ccdd74726a7c4b5f832ec5aea..abb2db068385b26bbfae59860112a4d69c7ccc03 100644
+--- a/src/main/java/org/bukkit/entity/Player.java
++++ b/src/main/java/org/bukkit/entity/Player.java
+@@ -24,6 +24,7 @@ import org.bukkit.advancement.Advancement;
+ import org.bukkit.advancement.AdvancementProgress;
+ import org.bukkit.block.data.BlockData;
+ import org.bukkit.conversations.Conversable;
++import org.bukkit.entity.Entity.Unsafe;
+ import org.bukkit.event.player.PlayerResourcePackStatusEvent;
+ import org.bukkit.inventory.ItemStack;
+ import org.bukkit.map.MapView;
+@@ -1870,4 +1871,27 @@ public interface Player extends HumanEntity, Conversable, OfflinePlayer, PluginM
+     @Override
+     Spigot spigot();
+     // Spigot end
++
++    // Rainforest start
++    @NotNull
++    @Override
++    Unsafe getUnsafeApi();
++
++    /**
++     * Unsafe API for {@link Player players}.
++     */
++    interface Unsafe extends Entity.Unsafe {
++        /**
++         * Send an update of current passengers.
++         */
++        void updatePassengers();
++
++        /**
++         * Destroy an entity in the eyes of the client.
++         *
++         * @param entity The entity to destroy.
++         */
++        void destroyEntity(@NotNull Entity entity);
++    }
++    // Rainforest end
+ }
