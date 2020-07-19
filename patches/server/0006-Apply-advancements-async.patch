@@ -264,7 +264,7 @@ index 95d57c6de95eca580ca4e3183db851e5a15de342..e7273bb18d84798e0644189cccb828d0
              }
          }
 diff --git a/src/main/java/net/minecraft/server/PlayerList.java b/src/main/java/net/minecraft/server/PlayerList.java
-index 5ee90e2e5ba13bc00dff7ba1ec273977b7b545ba..7ccd7556b4a047e997dc3937d291e69349c7d0b0 100644
+index 9382e8f79e8edec8885c629a36e230fbec50e1fb..f6120cb260f5a7e3562657a9c74ba7131916c0dd 100644
 --- a/src/main/java/net/minecraft/server/PlayerList.java
 +++ b/src/main/java/net/minecraft/server/PlayerList.java
 @@ -7,6 +7,8 @@ import com.google.common.collect.Sets;
