@@ -1,0 +1,37 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Mariell Hoversholm <proximyst@proximyst.com>
+Date: Mon, 20 Jul 2020 21:58:11 +0200
+Subject: [PATCH] Custom brand name
+
+---
+ src/main/java/com/proximyst/rainforest/RainforestConfig.java | 5 +++++
+ src/main/java/net/minecraft/server/PlayerList.java           | 2 +-
+ 2 files changed, 6 insertions(+), 1 deletion(-)
+
+diff --git a/src/main/java/com/proximyst/rainforest/RainforestConfig.java b/src/main/java/com/proximyst/rainforest/RainforestConfig.java
+index 0f28265e7e59e83ca972199bc7316f2a6594c1be..5e549feacacd288cab5235787efa60cc27f2317c 100644
+--- a/src/main/java/com/proximyst/rainforest/RainforestConfig.java
++++ b/src/main/java/com/proximyst/rainforest/RainforestConfig.java
+@@ -199,4 +199,9 @@ public final class RainforestConfig {
+     allowRidableChestDuping = getBoolean("allow-ridable-chestable-duping", allowRidableChestDuping);
+     allowSandDuping = getBoolean("allow-sand-duping", allowSandDuping);
+   }
++
++  public static String brandName = "Rainforest";
++  private static void brandName() {
++    brandName = getString("brand-name", brandName);
++  }
+ }
+diff --git a/src/main/java/net/minecraft/server/PlayerList.java b/src/main/java/net/minecraft/server/PlayerList.java
+index f6120cb260f5a7e3562657a9c74ba7131916c0dd..2e1d21f0331fda0b22df27fbc58f11d80d33bb44 100644
+--- a/src/main/java/net/minecraft/server/PlayerList.java
++++ b/src/main/java/net/minecraft/server/PlayerList.java
+@@ -191,7 +191,7 @@ public abstract class PlayerList {
+         // Spigot - view distance
+         playerconnection.sendPacket(new PacketPlayOutLogin(entityplayer.getId(), entityplayer.playerInteractManager.getGameMode(), entityplayer.playerInteractManager.c(), BiomeManager.a(worldserver1.getSeed()), worlddata.isHardcore(), this.server.E(), this.s, worldserver1.getTypeKey(), worldserver1.getDimensionKey(), this.getMaxPlayers(), worldserver1.getChunkProvider().playerChunkMap.getLoadViewDistance(), flag1, !flag, worldserver1.isDebugWorld(), worldserver1.isFlatWorld())); // Paper - no-tick view distance
+         entityplayer.getBukkitEntity().sendSupportedChannels(); // CraftBukkit
+-        playerconnection.sendPacket(new PacketPlayOutCustomPayload(PacketPlayOutCustomPayload.a, (new PacketDataSerializer(Unpooled.buffer())).a(this.getServer().getServerModName())));
++        playerconnection.sendPacket(new PacketPlayOutCustomPayload(PacketPlayOutCustomPayload.a, (new PacketDataSerializer(Unpooled.buffer())).a(RainforestConfig.brandName))); // Rainforest - custom brand name
+         playerconnection.sendPacket(new PacketPlayOutServerDifficulty(worlddata.getDifficulty(), worlddata.isDifficultyLocked()));
+         playerconnection.sendPacket(new PacketPlayOutAbilities(entityplayer.abilities));
+         playerconnection.sendPacket(new PacketPlayOutHeldItemSlot(entityplayer.inventory.itemInHandIndex));
