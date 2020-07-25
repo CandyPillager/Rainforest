@@ -8,7 +8,7 @@ Subject: [PATCH] Ban certain plugins
  1 file changed, 7 insertions(+), 1 deletion(-)
 
 diff --git a/src/main/java/org/bukkit/craftbukkit/CraftServer.java b/src/main/java/org/bukkit/craftbukkit/CraftServer.java
-index bea7d0f5bfd2944e97418f84c94c6a01c853e723..2446993b2888851f23ac72403d13d6b9859787ae 100644
+index 42e7c8eb7f9fb5f5759666982443475a08aa3ba3..3e3cf95ff9211711da9dfc0038e7d72f1ba2ccbc 100644
 --- a/src/main/java/org/bukkit/craftbukkit/CraftServer.java
 +++ b/src/main/java/org/bukkit/craftbukkit/CraftServer.java
 @@ -15,6 +15,7 @@ import com.mojang.brigadier.tree.CommandNode;

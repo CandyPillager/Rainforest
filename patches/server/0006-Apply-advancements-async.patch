@@ -141,10 +141,10 @@ index 0d854bda9611b45d78815f9fe9cafb8901de210f..1d28680bed17739f026b799da25d0735
 +  }
  }
 diff --git a/src/main/java/net/minecraft/server/AdvancementDataPlayer.java b/src/main/java/net/minecraft/server/AdvancementDataPlayer.java
-index 1a26e3c561f7004b10c57fd24a0315b0ec7c5640..b7abe22975d15e4223da08b9d5bfe2a8ff907680 100644
+index 2af574477658019b07651f7fa25e5806080beeaa..9b266df17af0bc6b341b269dcfde66103d45af7f 100644
 --- a/src/main/java/net/minecraft/server/AdvancementDataPlayer.java
 +++ b/src/main/java/net/minecraft/server/AdvancementDataPlayer.java
-@@ -59,6 +59,7 @@ public class AdvancementDataPlayer {
+@@ -63,6 +63,7 @@ public class AdvancementDataPlayer {
          this.d(advancementdataworld);
      }
  
@@ -152,7 +152,7 @@ index 1a26e3c561f7004b10c57fd24a0315b0ec7c5640..b7abe22975d15e4223da08b9d5bfe2a8
      public void a(EntityPlayer entityplayer) {
          this.player = entityplayer;
      }
-@@ -133,7 +134,7 @@ public class AdvancementDataPlayer {
+@@ -137,7 +138,7 @@ public class AdvancementDataPlayer {
  
      }
  

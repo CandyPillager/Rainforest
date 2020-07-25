@@ -178,7 +178,7 @@ index e7273bb18d84798e0644189cccb828d0668f65cb..bf29457978f284f598ac3a4666549c2a
      // CraftBukkit end
  
 diff --git a/src/main/java/org/bukkit/craftbukkit/event/CraftEventFactory.java b/src/main/java/org/bukkit/craftbukkit/event/CraftEventFactory.java
-index dbc46fcda3f3e006d9e7b7a89ab942b46a05cd9f..4d70d22ed01dd0e11dda2ef31987dc0046cbac67 100644
+index ddb58c1d502b6eaaee146eaa61d97cf5740d3990..527df78a96b64599293cc13afbd2a238d47d3196 100644
 --- a/src/main/java/org/bukkit/craftbukkit/event/CraftEventFactory.java
 +++ b/src/main/java/org/bukkit/craftbukkit/event/CraftEventFactory.java
 @@ -4,6 +4,7 @@ import com.google.common.base.Function;
@@ -189,7 +189,7 @@ index dbc46fcda3f3e006d9e7b7a89ab942b46a05cd9f..4d70d22ed01dd0e11dda2ef31987dc00
  import java.net.InetAddress;
  import java.util.ArrayList;
  import java.util.Collections;
-@@ -804,6 +805,7 @@ public class CraftEventFactory {
+@@ -805,6 +806,7 @@ public class CraftEventFactory {
              if (stack == null || stack.getType() == Material.AIR || stack.getAmount() == 0) continue;
  
              world.dropItem(entity.getLocation(), stack); // Paper - note: dropItem already clones due to this being bukkit -> NMS
