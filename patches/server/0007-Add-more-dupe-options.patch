@@ -157,7 +157,7 @@ index b39e98a0612198a642e4530b56e854349d4b719c..c260ca27098c46d37a6fdec86f018dec
  
      @Override
 diff --git a/src/main/java/net/minecraft/server/PlayerConnection.java b/src/main/java/net/minecraft/server/PlayerConnection.java
-index e7273bb18d84798e0644189cccb828d0668f65cb..bf29457978f284f598ac3a4666549c2a0cf34966 100644
+index 98e6d5e7abb27550ae5ff024b31203ed2871678d..84b113781f40f1eaf606aaca3373d359762b34b4 100644
 --- a/src/main/java/net/minecraft/server/PlayerConnection.java
 +++ b/src/main/java/net/minecraft/server/PlayerConnection.java
 @@ -4,6 +4,7 @@ import com.google.common.primitives.Doubles;
