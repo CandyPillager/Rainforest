@@ -156,10 +156,10 @@ index 49a38c6608b652ff48ef4eaca0dd3ccb1ba570e3..52daae9d04453add94353d9b9ff6c827
          switch (distance) {
              case -1:
 diff --git a/src/main/java/net/minecraft/server/MinecraftServer.java b/src/main/java/net/minecraft/server/MinecraftServer.java
-index 26f230a801bd8efa5f8b61dee53fe7b1435f906b..6d4e5b590b3779cf6cdbb9aee80cc00e7f52158b 100644
+index 3130c68e7318a41e763575b245ee1b5298c92a16..4e69286cb2859b6f86ab42dc92fef8d896c19d84 100644
 --- a/src/main/java/net/minecraft/server/MinecraftServer.java
 +++ b/src/main/java/net/minecraft/server/MinecraftServer.java
-@@ -1446,7 +1446,7 @@ public abstract class MinecraftServer extends IAsyncTaskHandlerReentrant<TickTas
+@@ -1447,7 +1447,7 @@ public abstract class MinecraftServer extends IAsyncTaskHandlerReentrant<TickTas
      }
  
      public String getServerModName() {

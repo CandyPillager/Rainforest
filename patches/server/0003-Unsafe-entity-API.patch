@@ -51,7 +51,7 @@ index d1df4e5799de4bf0a1fcc6940e2498374cd3db9d..7752399c0738d0a4968655b8b5ad3821
 +    // Rainforest end
  }
 diff --git a/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java b/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java
-index 72cd52fd7f0ba8df5be8989111d76e7180f033d7..44e6b4ab5ab1912e91050bfca45ec3476273b201 100644
+index adf918fd757fe3147f897de3ade64a9adf1d3203..ceef56b3cbacf153477cb7fc8b2a4dedc299bc0f 100644
 --- a/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java
 +++ b/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java
 @@ -55,8 +55,10 @@ import net.minecraft.server.PacketPlayOutBlockChange;

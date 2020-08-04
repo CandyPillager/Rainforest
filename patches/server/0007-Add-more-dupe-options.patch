@@ -47,7 +47,7 @@ index 22d920686418e86aec8be37f125123682af023a3..ff5970377ad1d71ec4065938a62bd5a7
 +  }
  }
 diff --git a/src/main/java/net/minecraft/server/Entity.java b/src/main/java/net/minecraft/server/Entity.java
-index 9c4b02d776f8b99c6703c8dfc5d9fac0702bbe80..98a1728503fdd6460bc7c9003eabffa333df4f9c 100644
+index 5a8bcd91dc5d030be531124106005ddf513e627f..915da18ebefcc6c80f56bdc8d11cecb5a204b885 100644
 --- a/src/main/java/net/minecraft/server/Entity.java
 +++ b/src/main/java/net/minecraft/server/Entity.java
 @@ -5,6 +5,7 @@ import co.aikar.timings.Timing;
@@ -136,7 +136,7 @@ index 6697b94550054ebbc8d4b3761bd9f36eb7e4ba8a..6ca56271e817b730c15392dc078e025a
              }
              // Paper end - fix sand duping
 diff --git a/src/main/java/net/minecraft/server/EntityPlayer.java b/src/main/java/net/minecraft/server/EntityPlayer.java
-index 306029f960f6d5e1f685ee552f7db2b5522df511..591feaef347bc0c0f134f3956b7a1edea4f5fcb1 100644
+index 11d3b43e4bbf719ffb7bb0c98d56a28ad025df9c..d99cf9c737d7f68bebb82daecb8b9f381037a157 100644
 --- a/src/main/java/net/minecraft/server/EntityPlayer.java
 +++ b/src/main/java/net/minecraft/server/EntityPlayer.java
 @@ -7,6 +7,7 @@ import com.mojang.authlib.GameProfile;
@@ -157,7 +157,7 @@ index 306029f960f6d5e1f685ee552f7db2b5522df511..591feaef347bc0c0f134f3956b7a1ede
  
      @Override
 diff --git a/src/main/java/net/minecraft/server/PlayerConnection.java b/src/main/java/net/minecraft/server/PlayerConnection.java
-index 19be6a93cf2bc7541054a67217391095c2063921..70fce39ee9147c21a6c815bb5b820deaa7aefe64 100644
+index 84b9c31cc1f7303a4ada7ea4c9dfcad9b74aa3ed..13b2a3a2edd081f753c142e0884256fa91158d36 100644
 --- a/src/main/java/net/minecraft/server/PlayerConnection.java
 +++ b/src/main/java/net/minecraft/server/PlayerConnection.java
 @@ -4,6 +4,7 @@ import com.google.common.primitives.Doubles;
@@ -178,7 +178,7 @@ index 19be6a93cf2bc7541054a67217391095c2063921..70fce39ee9147c21a6c815bb5b820dea
      // CraftBukkit end
  
 diff --git a/src/main/java/org/bukkit/craftbukkit/event/CraftEventFactory.java b/src/main/java/org/bukkit/craftbukkit/event/CraftEventFactory.java
-index ddb58c1d502b6eaaee146eaa61d97cf5740d3990..527df78a96b64599293cc13afbd2a238d47d3196 100644
+index 0af6fd88d3a151c74353ba29e97d63560b2fe990..c1f1115190723733568ca9e321669472697b2a48 100644
 --- a/src/main/java/org/bukkit/craftbukkit/event/CraftEventFactory.java
 +++ b/src/main/java/org/bukkit/craftbukkit/event/CraftEventFactory.java
 @@ -4,6 +4,7 @@ import com.google.common.base.Function;
