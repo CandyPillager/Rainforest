@@ -15,12 +15,12 @@ Subject: [PATCH] Add more dupe options
  8 files changed, 29 insertions(+), 7 deletions(-)
 
 diff --git a/src/main/java/com/proximyst/rainforest/RainforestConfig.java b/src/main/java/com/proximyst/rainforest/RainforestConfig.java
-index 1d28680bed17739f026b799da25d07358b2cb2b5..0f28265e7e59e83ca972199bc7316f2a6594c1be 100644
+index 0d854bda9611b45d78815f9fe9cafb8901de210f..e698f8c8c3bfbd96465e7f7c3c3fee63ff0efd22 100644
 --- a/src/main/java/com/proximyst/rainforest/RainforestConfig.java
 +++ b/src/main/java/com/proximyst/rainforest/RainforestConfig.java
-@@ -190,4 +190,13 @@ public final class RainforestConfig {
-   private static void asyncAdvancements() {
-     asyncAdvancements = getBoolean("async-advancements", asyncAdvancements);
+@@ -185,4 +185,13 @@ public final class RainforestConfig {
+     config.addDefault(path, def);
+     return config.getString(path, config.getString(path));
    }
 +
 +  public static boolean allowPlayerItemDuplication = false;
@@ -136,18 +136,18 @@ index 6697b94550054ebbc8d4b3761bd9f36eb7e4ba8a..6ca56271e817b730c15392dc078e025a
              }
              // Paper end - fix sand duping
 diff --git a/src/main/java/net/minecraft/server/EntityPlayer.java b/src/main/java/net/minecraft/server/EntityPlayer.java
-index b39e98a0612198a642e4530b56e854349d4b719c..c260ca27098c46d37a6fdec86f018decf227c374 100644
+index 306029f960f6d5e1f685ee552f7db2b5522df511..591feaef347bc0c0f134f3956b7a1edea4f5fcb1 100644
 --- a/src/main/java/net/minecraft/server/EntityPlayer.java
 +++ b/src/main/java/net/minecraft/server/EntityPlayer.java
 @@ -7,6 +7,7 @@ import com.mojang.authlib.GameProfile;
  import com.mojang.datafixers.util.Either;
  import com.mojang.serialization.DataResult;
- import com.proximyst.rainforest.AdvancementDataPlayerDelegate;
+ import java.util.ArrayDeque; // Paper
 +import com.proximyst.rainforest.RainforestConfig;
- import java.util.ArrayDeque;
  import java.util.Collection;
- import java.util.Deque;
-@@ -2118,7 +2119,7 @@ public class EntityPlayer extends EntityHuman implements ICrafting {
+ import java.util.Deque; // Paper
+ import java.util.Iterator;
+@@ -2124,7 +2125,7 @@ public class EntityPlayer extends EntityHuman implements ICrafting {
  
      @Override
      public boolean isFrozen() { // Paper - protected > public
@@ -157,7 +157,7 @@ index b39e98a0612198a642e4530b56e854349d4b719c..c260ca27098c46d37a6fdec86f018dec
  
      @Override
 diff --git a/src/main/java/net/minecraft/server/PlayerConnection.java b/src/main/java/net/minecraft/server/PlayerConnection.java
-index 98e6d5e7abb27550ae5ff024b31203ed2871678d..84b113781f40f1eaf606aaca3373d359762b34b4 100644
+index 19be6a93cf2bc7541054a67217391095c2063921..70fce39ee9147c21a6c815bb5b820deaa7aefe64 100644
 --- a/src/main/java/net/minecraft/server/PlayerConnection.java
 +++ b/src/main/java/net/minecraft/server/PlayerConnection.java
 @@ -4,6 +4,7 @@ import com.google.common.primitives.Doubles;
