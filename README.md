@@ -1,6 +1,6 @@
 # Rainforest
 
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/Proximyst/Rainforest/paperclip?style=flat-square)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/Proximyst/rainforest/Build%20Paperclip?style=flat-square)
 [![Discord](https://img.shields.io/discord/733744919650238494?logo=discord&style=flat-square)](https://discord.gg/3kaGYqv)
 
 ## What
