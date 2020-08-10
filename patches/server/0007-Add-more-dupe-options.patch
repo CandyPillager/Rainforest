@@ -157,7 +157,7 @@ index 11d3b43e4bbf719ffb7bb0c98d56a28ad025df9c..d99cf9c737d7f68bebb82daecb8b9f38
  
      @Override
 diff --git a/src/main/java/net/minecraft/server/PlayerConnection.java b/src/main/java/net/minecraft/server/PlayerConnection.java
-index 84b9c31cc1f7303a4ada7ea4c9dfcad9b74aa3ed..13b2a3a2edd081f753c142e0884256fa91158d36 100644
+index 6259ff4a571abb842b4a1b15a43b2b7c3fd5f0ab..7298b2f94bf93f33160264e0f0d14349c1672746 100644
 --- a/src/main/java/net/minecraft/server/PlayerConnection.java
 +++ b/src/main/java/net/minecraft/server/PlayerConnection.java
 @@ -4,6 +4,7 @@ import com.google.common.primitives.Doubles;
@@ -168,7 +168,7 @@ index 84b9c31cc1f7303a4ada7ea4c9dfcad9b74aa3ed..13b2a3a2edd081f753c142e0884256fa
  import io.netty.util.concurrent.Future;
  import io.netty.util.concurrent.GenericFutureListener;
  import it.unimi.dsi.fastutil.ints.Int2ShortMap;
-@@ -2776,7 +2777,7 @@ public class PlayerConnection implements PacketListenerPlayIn {
+@@ -2774,7 +2775,7 @@ public class PlayerConnection implements PacketListenerPlayIn {
      }
  
      public final boolean isDisconnected() {
