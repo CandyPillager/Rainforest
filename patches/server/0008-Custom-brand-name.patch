@@ -23,12 +23,12 @@ index e698f8c8c3bfbd96465e7f7c3c3fee63ff0efd22..e0af5eb280dfd2ef6c9a80385e1705f7
 +  }
  }
 diff --git a/src/main/java/net/minecraft/server/PlayerList.java b/src/main/java/net/minecraft/server/PlayerList.java
-index 85ffd82615d81dcb7767ab9ec84884dc44266db3..3198e4417070c1a644f1dcefbcd05a0e3e74ca3c 100644
+index 8065908927074d1fa8a13e09cde9cac3fd8b090a..bfc5dd10b0a73105458158c64804cb1b5cd55ebc 100644
 --- a/src/main/java/net/minecraft/server/PlayerList.java
 +++ b/src/main/java/net/minecraft/server/PlayerList.java
 @@ -189,7 +189,7 @@ public abstract class PlayerList {
          // Spigot - view distance
-         playerconnection.sendPacket(new PacketPlayOutLogin(entityplayer.getId(), entityplayer.playerInteractManager.getGameMode(), entityplayer.playerInteractManager.c(), BiomeManager.a(worldserver1.getSeed()), worlddata.isHardcore(), this.server.E(), this.s, worldserver1.getTypeKey(), worldserver1.getDimensionKey(), this.getMaxPlayers(), worldserver1.getChunkProvider().playerChunkMap.getLoadViewDistance(), flag1, !flag, worldserver1.isDebugWorld(), worldserver1.isFlatWorld())); // Paper - no-tick view distance
+         playerconnection.sendPacket(new PacketPlayOutLogin(entityplayer.getId(), entityplayer.playerInteractManager.getGameMode(), entityplayer.playerInteractManager.c(), BiomeManager.a(worldserver1.getSeed()), worlddata.isHardcore(), this.server.F(), this.s, worldserver1.getDimensionManager(), worldserver1.getDimensionKey(), this.getMaxPlayers(), worldserver1.getChunkProvider().playerChunkMap.getLoadViewDistance(), flag1, !flag, worldserver1.isDebugWorld(), worldserver1.isFlatWorld())); // Paper - no-tick view distance
          entityplayer.getBukkitEntity().sendSupportedChannels(); // CraftBukkit
 -        playerconnection.sendPacket(new PacketPlayOutCustomPayload(PacketPlayOutCustomPayload.a, (new PacketDataSerializer(Unpooled.buffer())).a(this.getServer().getServerModName())));
 +        playerconnection.sendPacket(new PacketPlayOutCustomPayload(PacketPlayOutCustomPayload.a, (new PacketDataSerializer(Unpooled.buffer())).a(com.proximyst.rainforest.RainforestConfig.brandName))); // Rainforest - custom brand name

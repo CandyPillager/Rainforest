@@ -14,7 +14,7 @@ Subject: [PATCH] Rainforest brand change
  7 files changed, 29 insertions(+), 26 deletions(-)
 
 diff --git a/pom.xml b/pom.xml
-index ef8ee637a8a0e5e703922b2991c58f4f116b23fb..e947fee7f3200143728a42a63436a62d90f9489a 100644
+index 594ab9afbd6249df8817eeb4eb50bffc986bfce1..c782233ee48e9e78b10482a38f085d5281385d87 100644
 --- a/pom.xml
 +++ b/pom.xml
 @@ -1,11 +1,11 @@
@@ -24,7 +24,7 @@ index ef8ee637a8a0e5e703922b2991c58f4f116b23fb..e947fee7f3200143728a42a63436a62d
 -    <artifactId>paper</artifactId>
 +    <artifactId>rainforest</artifactId> <!-- Rainforest -->
      <packaging>jar</packaging>
-     <version>1.16.1-R0.1-SNAPSHOT</version>
+     <version>1.16.2-R0.1-SNAPSHOT</version>
 -    <name>Paper</name>
 -    <url>https://papermc.io</url>
 +    <name>Rainforest</name> <!-- Rainforest -->
@@ -156,10 +156,10 @@ index 49a38c6608b652ff48ef4eaca0dd3ccb1ba570e3..52daae9d04453add94353d9b9ff6c827
          switch (distance) {
              case -1:
 diff --git a/src/main/java/net/minecraft/server/MinecraftServer.java b/src/main/java/net/minecraft/server/MinecraftServer.java
-index 3130c68e7318a41e763575b245ee1b5298c92a16..4e69286cb2859b6f86ab42dc92fef8d896c19d84 100644
+index ec25c6515c0808fcdcf83f36ff39f56de581e295..fd25ef5ba7e8fae6bf7d91726dd12c80370c0381 100644
 --- a/src/main/java/net/minecraft/server/MinecraftServer.java
 +++ b/src/main/java/net/minecraft/server/MinecraftServer.java
-@@ -1447,7 +1447,7 @@ public abstract class MinecraftServer extends IAsyncTaskHandlerReentrant<TickTas
+@@ -1451,7 +1451,7 @@ public abstract class MinecraftServer extends IAsyncTaskHandlerReentrant<TickTas
      }
  
      public String getServerModName() {
@@ -169,10 +169,10 @@ index 3130c68e7318a41e763575b245ee1b5298c92a16..4e69286cb2859b6f86ab42dc92fef8d8
  
      public CrashReport b(CrashReport crashreport) {
 diff --git a/src/main/java/org/bukkit/craftbukkit/CraftServer.java b/src/main/java/org/bukkit/craftbukkit/CraftServer.java
-index 6282a05ae855a6b55eec4980fbc1b356f65f500e..1a1d37bee057c3a256e807d8a65ed79bb935889b 100644
+index 93c0afbfbafc6b9cc82d0a393f36cecb2f9ffcc1..17a0e0436e221c62262bfcd5b270e3c693568664 100644
 --- a/src/main/java/org/bukkit/craftbukkit/CraftServer.java
 +++ b/src/main/java/org/bukkit/craftbukkit/CraftServer.java
-@@ -231,7 +231,7 @@ import javax.annotation.Nullable; // Paper
+@@ -230,7 +230,7 @@ import javax.annotation.Nullable; // Paper
  import javax.annotation.Nonnull; // Paper
  
  public final class CraftServer implements Server {
@@ -182,7 +182,7 @@ index 6282a05ae855a6b55eec4980fbc1b356f65f500e..1a1d37bee057c3a256e807d8a65ed79b
      private final String bukkitVersion = Versioning.getBukkitVersion();
      private final Logger logger = Logger.getLogger("Minecraft");
 diff --git a/src/main/java/org/bukkit/craftbukkit/Main.java b/src/main/java/org/bukkit/craftbukkit/Main.java
-index 9dd994f8b111cec2dfa30a962db8654a68c344b1..57e00a95a6e78a7f517157bf126331bcabe1ab7a 100644
+index 082a35004f01d8877ac90f9b7b223f711943854a..e0871d8513ddb0542247e760f476727a410d8ab4 100644
 --- a/src/main/java/org/bukkit/craftbukkit/Main.java
 +++ b/src/main/java/org/bukkit/craftbukkit/Main.java
 @@ -252,7 +252,7 @@ public class Main {

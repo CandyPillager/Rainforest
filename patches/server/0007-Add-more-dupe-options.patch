@@ -47,7 +47,7 @@ index 22d920686418e86aec8be37f125123682af023a3..ff5970377ad1d71ec4065938a62bd5a7
 +  }
  }
 diff --git a/src/main/java/net/minecraft/server/Entity.java b/src/main/java/net/minecraft/server/Entity.java
-index 5a8bcd91dc5d030be531124106005ddf513e627f..915da18ebefcc6c80f56bdc8d11cecb5a204b885 100644
+index c87de4b5b85eba4f3b9f639eca1ab9c4a7486d67..5123e2800e2df10b00475d102cbb9e131539e523 100644
 --- a/src/main/java/net/minecraft/server/Entity.java
 +++ b/src/main/java/net/minecraft/server/Entity.java
 @@ -5,6 +5,7 @@ import co.aikar.timings.Timing;
@@ -58,7 +58,7 @@ index 5a8bcd91dc5d030be531124106005ddf513e627f..915da18ebefcc6c80f56bdc8d11cecb5
  import it.unimi.dsi.fastutil.objects.Object2DoubleArrayMap;
  import it.unimi.dsi.fastutil.objects.Object2DoubleMap;
  import org.apache.logging.log4j.LogManager;
-@@ -1936,6 +1937,7 @@ public abstract class Entity implements INamableTileEntity, ICommandListener, Ke
+@@ -1891,6 +1892,7 @@ public abstract class Entity implements INamableTileEntity, ICommandListener, Ke
              }
              // CraftBukkit end
              EntityItem entityitem = new EntityItem(this.world, this.locX(), this.locY() + (double) f, this.locZ(), itemstack.cloneItemStack()); // Paper - clone so we can destroy original
@@ -66,7 +66,7 @@ index 5a8bcd91dc5d030be531124106005ddf513e627f..915da18ebefcc6c80f56bdc8d11cecb5
              itemstack.setCount(0); // Paper - destroy this item - if this ever leaks due to game bugs, ensure it doesn't dupe
  
              entityitem.defaultPickupDelay();
-@@ -2588,7 +2590,7 @@ public abstract class Entity implements INamableTileEntity, ICommandListener, Ke
+@@ -2535,7 +2537,7 @@ public abstract class Entity implements INamableTileEntity, ICommandListener, Ke
      public Entity teleportTo(WorldServer worldserver, BlockPosition location) {
          // CraftBukkit end
          // Paper start - fix bad state entities causing dupes
@@ -75,16 +75,16 @@ index 5a8bcd91dc5d030be531124106005ddf513e627f..915da18ebefcc6c80f56bdc8d11cecb5
              LOGGER.warn("Illegal Entity Teleport " + this + " to " + worldserver + ":" + location, new Throwable());
              return null;
          }
-@@ -2696,7 +2698,7 @@ public abstract class Entity implements INamableTileEntity, ICommandListener, Ke
-                 entity.bukkitEntity = this.getBukkitEntity();
+@@ -2575,7 +2577,7 @@ public abstract class Entity implements INamableTileEntity, ICommandListener, Ke
+                     entity.bukkitEntity = this.getBukkitEntity();
  
-                 if (this instanceof EntityInsentient) {
--                    ((EntityInsentient)this).unleash(true, true); // Paper drop lead
-+                    ((EntityInsentient)this).unleash(true, !RainforestConfig.allowRidableChestDuping); // Paper drop lead // Rainforest
+                     if (this instanceof EntityInsentient) {
+-                        ((EntityInsentient) this).unleash(true, true); // Paper drop lead
++                        ((EntityInsentient) this).unleash(true, !RainforestConfig.allowRidableChestDuping); // Paper drop lead // Rainforest
+                     }
+                     // CraftBukkit end
                  }
-                 // CraftBukkit end
-             }
-@@ -2717,7 +2719,7 @@ public abstract class Entity implements INamableTileEntity, ICommandListener, Ke
+@@ -2683,7 +2685,7 @@ public abstract class Entity implements INamableTileEntity, ICommandListener, Ke
      }
  
      public boolean canPortal() {
@@ -94,19 +94,19 @@ index 5a8bcd91dc5d030be531124106005ddf513e627f..915da18ebefcc6c80f56bdc8d11cecb5
  
      public float a(Explosion explosion, IBlockAccess iblockaccess, BlockPosition blockposition, IBlockData iblockdata, Fluid fluid, float f) {
 diff --git a/src/main/java/net/minecraft/server/EntityEnderDragon.java b/src/main/java/net/minecraft/server/EntityEnderDragon.java
-index 63a759cc18b5b765bc9d34f71dd775fd35dee280..56e6df1ae48bad4a247f986a19d373fbd4e04c3a 100644
+index 6b2c5e8d4640e19d33cbfe76d2399e6100890dbc..8b8ebffb89f11cfbc51b470e77171ea490a9aa18 100644
 --- a/src/main/java/net/minecraft/server/EntityEnderDragon.java
 +++ b/src/main/java/net/minecraft/server/EntityEnderDragon.java
 @@ -839,6 +839,7 @@ public class EntityEnderDragon extends EntityInsentient implements IMonster {
          if (nbttagcompound.hasKey("DragonPhase")) {
-             this.bN.setControllerPhase(DragonControllerPhase.getById(nbttagcompound.getInt("DragonPhase")));
+             this.bG.setControllerPhase(DragonControllerPhase.getById(nbttagcompound.getInt("DragonPhase")));
          }
 +        if (!world.rainforestConfig.allowEnderDragonExpDuping) // Rainforest
          this.deathAnimationTicks = nbttagcompound.getInt("Paper.DeathTick"); // Paper
  
      }
 diff --git a/src/main/java/net/minecraft/server/EntityFallingBlock.java b/src/main/java/net/minecraft/server/EntityFallingBlock.java
-index 6697b94550054ebbc8d4b3761bd9f36eb7e4ba8a..6ca56271e817b730c15392dc078e025aad0baaaf 100644
+index 9e9b8d8aef62b423828b69fce4875a2ea8fc9911..153841a1dc3546e8b88eac6bef12a7d7773c269e 100644
 --- a/src/main/java/net/minecraft/server/EntityFallingBlock.java
 +++ b/src/main/java/net/minecraft/server/EntityFallingBlock.java
 @@ -1,6 +1,7 @@
@@ -136,7 +136,7 @@ index 6697b94550054ebbc8d4b3761bd9f36eb7e4ba8a..6ca56271e817b730c15392dc078e025a
              }
              // Paper end - fix sand duping
 diff --git a/src/main/java/net/minecraft/server/EntityPlayer.java b/src/main/java/net/minecraft/server/EntityPlayer.java
-index 11d3b43e4bbf719ffb7bb0c98d56a28ad025df9c..d99cf9c737d7f68bebb82daecb8b9f381037a157 100644
+index e022f9bd100db916f0c32278d6669375c239ee52..9c60cc51b824ed1af13e4faebd755064d444ba39 100644
 --- a/src/main/java/net/minecraft/server/EntityPlayer.java
 +++ b/src/main/java/net/minecraft/server/EntityPlayer.java
 @@ -7,6 +7,7 @@ import com.mojang.authlib.GameProfile;
@@ -147,7 +147,7 @@ index 11d3b43e4bbf719ffb7bb0c98d56a28ad025df9c..d99cf9c737d7f68bebb82daecb8b9f38
  import java.util.Collection;
  import java.util.Deque; // Paper
  import java.util.Iterator;
-@@ -2124,7 +2125,7 @@ public class EntityPlayer extends EntityHuman implements ICrafting {
+@@ -2096,7 +2097,7 @@ public class EntityPlayer extends EntityHuman implements ICrafting {
  
      @Override
      public boolean isFrozen() { // Paper - protected > public
@@ -157,7 +157,7 @@ index 11d3b43e4bbf719ffb7bb0c98d56a28ad025df9c..d99cf9c737d7f68bebb82daecb8b9f38
  
      @Override
 diff --git a/src/main/java/net/minecraft/server/PlayerConnection.java b/src/main/java/net/minecraft/server/PlayerConnection.java
-index 6259ff4a571abb842b4a1b15a43b2b7c3fd5f0ab..7298b2f94bf93f33160264e0f0d14349c1672746 100644
+index bc613281d18efac7bb926d84ec54653368b93f43..98f37ff40e19a0af759f5cc007e935e150f81448 100644
 --- a/src/main/java/net/minecraft/server/PlayerConnection.java
 +++ b/src/main/java/net/minecraft/server/PlayerConnection.java
 @@ -4,6 +4,7 @@ import com.google.common.primitives.Doubles;
@@ -168,7 +168,7 @@ index 6259ff4a571abb842b4a1b15a43b2b7c3fd5f0ab..7298b2f94bf93f33160264e0f0d14349
  import io.netty.util.concurrent.Future;
  import io.netty.util.concurrent.GenericFutureListener;
  import it.unimi.dsi.fastutil.ints.Int2ShortMap;
-@@ -2774,7 +2775,7 @@ public class PlayerConnection implements PacketListenerPlayIn {
+@@ -2769,7 +2770,7 @@ public class PlayerConnection implements PacketListenerPlayIn {
      }
  
      public final boolean isDisconnected() {
@@ -178,7 +178,7 @@ index 6259ff4a571abb842b4a1b15a43b2b7c3fd5f0ab..7298b2f94bf93f33160264e0f0d14349
      // CraftBukkit end
  
 diff --git a/src/main/java/org/bukkit/craftbukkit/event/CraftEventFactory.java b/src/main/java/org/bukkit/craftbukkit/event/CraftEventFactory.java
-index 0af6fd88d3a151c74353ba29e97d63560b2fe990..c1f1115190723733568ca9e321669472697b2a48 100644
+index 89268b9b46f079313ddd436b72769f5ff6fb0900..a9e04e8c24413fcbb41252f837234de4cdb54884 100644
 --- a/src/main/java/org/bukkit/craftbukkit/event/CraftEventFactory.java
 +++ b/src/main/java/org/bukkit/craftbukkit/event/CraftEventFactory.java
 @@ -4,6 +4,7 @@ import com.google.common.base.Function;
