@@ -73,7 +73,7 @@ index 7808ade92ccd3553056c57cdf77464fb8bdf9312..1e8ef65cc025ee7a65ce663754faa01a
 +    // Rainforest end
  }
 diff --git a/src/main/java/org/bukkit/entity/Player.java b/src/main/java/org/bukkit/entity/Player.java
-index b584f8b15f7ee36b42bba0e0bae721aae8f6f14b..26cfce6f3cbb8427111c2df0bcfe4d7d61eedc58 100644
+index 991f757a89d2e917186bb152a2f92bad8b6c2897..5c0f1e8df88c2c79aa43a324d860cd7034fffaaa 100644
 --- a/src/main/java/org/bukkit/entity/Player.java
 +++ b/src/main/java/org/bukkit/entity/Player.java
 @@ -24,6 +24,7 @@ import org.bukkit.advancement.Advancement;
@@ -84,7 +84,7 @@ index b584f8b15f7ee36b42bba0e0bae721aae8f6f14b..26cfce6f3cbb8427111c2df0bcfe4d7d
  import org.bukkit.event.player.PlayerResourcePackStatusEvent;
  import org.bukkit.inventory.ItemStack;
  import org.bukkit.map.MapView;
-@@ -1877,4 +1878,27 @@ public interface Player extends HumanEntity, Conversable, OfflinePlayer, PluginM
+@@ -1887,4 +1888,27 @@ public interface Player extends HumanEntity, Conversable, OfflinePlayer, PluginM
      @Override
      Spigot spigot();
      // Spigot end

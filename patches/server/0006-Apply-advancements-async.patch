@@ -11,12 +11,12 @@ Subject: [PATCH] Apply advancements async
  4 files changed, 53 insertions(+), 4 deletions(-)
 
 diff --git a/src/main/java/com/destroystokyo/paper/PaperConfig.java b/src/main/java/com/destroystokyo/paper/PaperConfig.java
-index 60f03502a7fd622d2de3b2da9fe8014b289f3d31..cac599c1e90b261b673acecad7517d91ccd0516a 100644
+index f65d3545039a2c471819ab5950c171ef6193cdb4..301cecb0f5e9fd9b4ba421103c42b580f3e6bf18 100644
 --- a/src/main/java/com/destroystokyo/paper/PaperConfig.java
 +++ b/src/main/java/com/destroystokyo/paper/PaperConfig.java
-@@ -446,4 +446,9 @@ public class PaperConfig {
-             maxPlayerAutoSavePerTick = (playerAutoSaveRate == -1 || playerAutoSaveRate > 100) ? 10 : 20;
-         }
+@@ -457,4 +457,9 @@ public class PaperConfig {
+     private static void maxJoinsPerTick() {
+         maxJoinsPerTick = getInt("settings.max-joins-per-tick", 3);
      }
 +
 +    public static boolean asyncAdvancements;
@@ -37,7 +37,7 @@ index 2af574477658019b07651f7fa25e5806080beeaa..383593f5e6b920447e64a252fc374ab9
          this.player = entityplayer;
      }
 diff --git a/src/main/java/net/minecraft/server/EntityPlayer.java b/src/main/java/net/minecraft/server/EntityPlayer.java
-index ba97787f263ed772e67197ed49b70090e02c7de5..e022f9bd100db916f0c32278d6669375c239ee52 100644
+index 73ea9518316ff465e86fe95143875c9de5aa2fa8..36b04066f7d0b47ec13c0a844c736cabe891d2d0 100644
 --- a/src/main/java/net/minecraft/server/EntityPlayer.java
 +++ b/src/main/java/net/minecraft/server/EntityPlayer.java
 @@ -15,6 +15,7 @@ import java.util.Optional;
@@ -75,7 +75,7 @@ index ba97787f263ed772e67197ed49b70090e02c7de5..e022f9bd100db916f0c32278d6669375
          this.advancementDataPlayer.b(this);
      }
  
-@@ -1852,7 +1855,25 @@ public class EntityPlayer extends EntityHuman implements ICrafting {
+@@ -1853,7 +1856,25 @@ public class EntityPlayer extends EntityHuman implements ICrafting {
          this.worldChangeInvuln = false;
      }
  
@@ -102,7 +102,7 @@ index ba97787f263ed772e67197ed49b70090e02c7de5..e022f9bd100db916f0c32278d6669375
      }
  
 diff --git a/src/main/java/net/minecraft/server/PlayerList.java b/src/main/java/net/minecraft/server/PlayerList.java
-index f9eb17cb6eda0b343240240720495751cf605385..8065908927074d1fa8a13e09cde9cac3fd8b090a 100644
+index 33915eeb0229c0739d69b0ee2cb2251c9d99f87a..8f844632071819c21f697cd9000d0eff3e8cc5bf 100644
 --- a/src/main/java/net/minecraft/server/PlayerList.java
 +++ b/src/main/java/net/minecraft/server/PlayerList.java
 @@ -18,6 +18,7 @@ import java.util.Map;

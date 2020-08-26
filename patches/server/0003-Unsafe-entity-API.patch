@@ -51,7 +51,7 @@ index b1fdc5737d332c6210d57793468da1eda8f8b9d2..c6771153b3b1183f64225d228d8e03dd
 +    // Rainforest end
  }
 diff --git a/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java b/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java
-index 0088701e2a29d6e372ba487b3a0cc1b6c7249dac..092b979d10bdd0c1153cb150482b88f9fcbd55ae 100644
+index b97be51c6859fa2d45c07c853980adb05d11b65f..1016f87d2d957425806f8ec9861e968e10d287b9 100644
 --- a/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java
 +++ b/src/main/java/org/bukkit/craftbukkit/entity/CraftPlayer.java
 @@ -52,8 +52,10 @@ import net.minecraft.server.PacketPlayOutBlockChange;
@@ -73,7 +73,7 @@ index 0088701e2a29d6e372ba487b3a0cc1b6c7249dac..092b979d10bdd0c1153cb150482b88f9
  import org.bukkit.event.player.PlayerRegisterChannelEvent;
  import org.bukkit.event.player.PlayerTeleportEvent;
  import org.bukkit.event.player.PlayerUnregisterChannelEvent;
-@@ -823,7 +826,7 @@ public class CraftPlayer extends CraftHumanEntity implements Player {
+@@ -819,7 +822,7 @@ public class CraftPlayer extends CraftHumanEntity implements Player {
      public boolean setPassenger(org.bukkit.entity.Entity passenger) {
          boolean wasSet = super.setPassenger(passenger);
          if (wasSet) {
@@ -82,7 +82,7 @@ index 0088701e2a29d6e372ba487b3a0cc1b6c7249dac..092b979d10bdd0c1153cb150482b88f9
          }
          return wasSet;
      }
-@@ -2152,4 +2155,41 @@ public class CraftPlayer extends CraftHumanEntity implements Player {
+@@ -2155,4 +2158,41 @@ public class CraftPlayer extends CraftHumanEntity implements Player {
          return spigot;
      }
      // Spigot end
