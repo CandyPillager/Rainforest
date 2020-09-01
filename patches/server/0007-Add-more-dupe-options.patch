@@ -157,7 +157,7 @@ index 36b04066f7d0b47ec13c0a844c736cabe891d2d0..6e9d352de56280c66d6407e243fd3090
  
      @Override
 diff --git a/src/main/java/net/minecraft/server/PlayerConnection.java b/src/main/java/net/minecraft/server/PlayerConnection.java
-index 1519813d35541199e860234dc3fb121a35604c0f..9a6712d9edb3ba952ef9d509905b7169710234a7 100644
+index e0c3eab9aef950d91920076990215d79d2b710c6..99b4e7aea6c14522de752650feeaf4a1d8e9ff86 100644
 --- a/src/main/java/net/minecraft/server/PlayerConnection.java
 +++ b/src/main/java/net/minecraft/server/PlayerConnection.java
 @@ -5,6 +5,7 @@ import com.google.common.primitives.Floats;
@@ -168,7 +168,7 @@ index 1519813d35541199e860234dc3fb121a35604c0f..9a6712d9edb3ba952ef9d509905b7169
  import io.netty.util.concurrent.Future;
  import io.netty.util.concurrent.GenericFutureListener;
  import it.unimi.dsi.fastutil.ints.Int2ShortMap;
-@@ -2786,7 +2787,7 @@ public class PlayerConnection implements PacketListenerPlayIn {
+@@ -2791,7 +2792,7 @@ public class PlayerConnection implements PacketListenerPlayIn {
      // Paper end
  
      public final boolean isDisconnected() {
@@ -178,7 +178,7 @@ index 1519813d35541199e860234dc3fb121a35604c0f..9a6712d9edb3ba952ef9d509905b7169
      // CraftBukkit end
  
 diff --git a/src/main/java/org/bukkit/craftbukkit/event/CraftEventFactory.java b/src/main/java/org/bukkit/craftbukkit/event/CraftEventFactory.java
-index 68e3d297876f356594d2df7d5ba72d70dd563e99..7c2522e35b727b7d87d5ff15e839eefd0f2ed558 100644
+index 8193b317bfd16f33873ddf5cd298c98ad0875cf6..da7f01690a6e0a584710de6d1306518b387b5d61 100644
 --- a/src/main/java/org/bukkit/craftbukkit/event/CraftEventFactory.java
 +++ b/src/main/java/org/bukkit/craftbukkit/event/CraftEventFactory.java
 @@ -4,6 +4,7 @@ import com.google.common.base.Function;
@@ -189,7 +189,7 @@ index 68e3d297876f356594d2df7d5ba72d70dd563e99..7c2522e35b727b7d87d5ff15e839eefd
  import java.net.InetAddress;
  import java.util.ArrayList;
  import java.util.Collections;
-@@ -809,6 +810,7 @@ public class CraftEventFactory {
+@@ -811,6 +812,7 @@ public class CraftEventFactory {
              if (stack == null || stack.getType() == Material.AIR || stack.getAmount() == 0) continue;
  
              world.dropItem(entity.getLocation(), stack); // Paper - note: dropItem already clones due to this being bukkit -> NMS
