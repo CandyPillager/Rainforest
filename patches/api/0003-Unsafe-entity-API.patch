@@ -9,10 +9,10 @@ Subject: [PATCH] Unsafe entity API
  2 files changed, 79 insertions(+)
 
 diff --git a/src/main/java/org/bukkit/entity/Entity.java b/src/main/java/org/bukkit/entity/Entity.java
-index 7808ade92ccd3553056c57cdf77464fb8bdf9312..1e8ef65cc025ee7a65ce663754faa01a5a7f8b72 100644
+index cb9ef706eeb994f1948708ad5e8689550ea56df7..59613362515d32fca96dfd3772302282f2920d21 100644
 --- a/src/main/java/org/bukkit/entity/Entity.java
 +++ b/src/main/java/org/bukkit/entity/Entity.java
-@@ -695,4 +695,59 @@ public interface Entity extends Metadatable, CommandSender, Nameable, Persistent
+@@ -691,4 +691,59 @@ public interface Entity extends Metadatable, CommandSender, Nameable, Persistent
       */
      public boolean isInLava();
      // Paper end

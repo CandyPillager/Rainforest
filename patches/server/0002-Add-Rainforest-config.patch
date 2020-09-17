@@ -393,10 +393,10 @@ index 0000000000000000000000000000000000000000..22d920686418e86aec8be37f12512368
 +  }
 +}
 diff --git a/src/main/java/net/minecraft/server/DedicatedServer.java b/src/main/java/net/minecraft/server/DedicatedServer.java
-index 1c878265be0f458ff264bc4a4011397e5b60b20e..650f77c0c531dbb88828fceecfb7968190f67566 100644
+index f55dc28f3e220966199ec718a437e50ef4b76027..713b2f3acdfff2fe8db9149f8397b0f26fb0708f 100644
 --- a/src/main/java/net/minecraft/server/DedicatedServer.java
 +++ b/src/main/java/net/minecraft/server/DedicatedServer.java
-@@ -170,6 +170,7 @@ public class DedicatedServer extends MinecraftServer implements IMinecraftServer
+@@ -166,6 +166,7 @@ public class DedicatedServer extends MinecraftServer implements IMinecraftServer
          com.destroystokyo.paper.PaperConfig.registerCommands();
          com.destroystokyo.paper.VersionHistoryManager.INSTANCE.getClass(); // load version history now
          // Paper end
@@ -405,7 +405,7 @@ index 1c878265be0f458ff264bc4a4011397e5b60b20e..650f77c0c531dbb88828fceecfb79681
          this.setPVP(dedicatedserverproperties.pvp);
          this.setAllowFlight(dedicatedserverproperties.allowFlight);
 diff --git a/src/main/java/net/minecraft/server/World.java b/src/main/java/net/minecraft/server/World.java
-index 724aec660a36eb516514ae5dbee5fee2ca248a5a..3c829a513e9804414776cb339f42c8f3df8433e2 100644
+index eaa285393454771052fae7676d2983ec2efae10b..022e94b9db93f145b2989a2eccce63788a51790f 100644
 --- a/src/main/java/net/minecraft/server/World.java
 +++ b/src/main/java/net/minecraft/server/World.java
 @@ -9,6 +9,7 @@ import com.destroystokyo.paper.exception.ServerInternalException;
@@ -434,10 +434,10 @@ index 724aec660a36eb516514ae5dbee5fee2ca248a5a..3c829a513e9804414776cb339f42c8f3
          this.world = new CraftWorld((WorldServer) this, gen, env);
          this.ticksPerAnimalSpawns = this.getServer().getTicksPerAnimalSpawns(); // CraftBukkit
 diff --git a/src/main/java/org/bukkit/craftbukkit/CraftServer.java b/src/main/java/org/bukkit/craftbukkit/CraftServer.java
-index 3580520c9dca841461e575b08de66e2a0e4687a5..b2c3f509df859126e4a6918321d4de57cd08f952 100644
+index 8dd97966c0ce019aabe989e768b6c99459ff0ac1..7a819d4ee6a0884c487476e87d50f6f6d362c077 100644
 --- a/src/main/java/org/bukkit/craftbukkit/CraftServer.java
 +++ b/src/main/java/org/bukkit/craftbukkit/CraftServer.java
-@@ -854,6 +854,7 @@ public final class CraftServer implements Server {
+@@ -856,6 +856,7 @@ public final class CraftServer implements Server {
  
          org.spigotmc.SpigotConfig.init((File) console.options.valueOf("spigot-settings")); // Spigot
          com.destroystokyo.paper.PaperConfig.init((File) console.options.valueOf("paper-settings")); // Paper
@@ -445,7 +445,7 @@ index 3580520c9dca841461e575b08de66e2a0e4687a5..b2c3f509df859126e4a6918321d4de57
          for (WorldServer world : console.getWorlds()) {
              world.worldDataServer.setDifficulty(config.difficulty);
              world.setSpawnFlags(config.spawnMonsters, config.spawnAnimals);
-@@ -888,6 +889,7 @@ public final class CraftServer implements Server {
+@@ -890,6 +891,7 @@ public final class CraftServer implements Server {
              }
              world.spigotConfig.init(); // Spigot
              world.paperConfig.init(); // Paper
@@ -453,7 +453,7 @@ index 3580520c9dca841461e575b08de66e2a0e4687a5..b2c3f509df859126e4a6918321d4de57
          }
  
          Plugin[] pluginClone = pluginManager.getPlugins().clone(); // Paper
-@@ -2239,6 +2241,13 @@ public final class CraftServer implements Server {
+@@ -2250,6 +2252,13 @@ public final class CraftServer implements Server {
              return com.destroystokyo.paper.PaperConfig.config;
          }
  
@@ -468,7 +468,7 @@ index 3580520c9dca841461e575b08de66e2a0e4687a5..b2c3f509df859126e4a6918321d4de57
          public void restart() {
              org.spigotmc.RestartCommand.restart();
 diff --git a/src/main/java/org/bukkit/craftbukkit/Main.java b/src/main/java/org/bukkit/craftbukkit/Main.java
-index b5847ea7d0e6145463349035e245daecf3bb7447..43c338668dd4d259b4158b165c8b61b29b48c02b 100644
+index 43131f1c89d0160c1423d57e772b13789822bb68..5196fbc59c49663a2b899de4ba487ed8885f4611 100644
 --- a/src/main/java/org/bukkit/craftbukkit/Main.java
 +++ b/src/main/java/org/bukkit/craftbukkit/Main.java
 @@ -139,6 +139,14 @@ public class Main {

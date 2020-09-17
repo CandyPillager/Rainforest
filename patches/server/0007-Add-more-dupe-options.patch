@@ -47,7 +47,7 @@ index 22d920686418e86aec8be37f125123682af023a3..ff5970377ad1d71ec4065938a62bd5a7
 +  }
  }
 diff --git a/src/main/java/net/minecraft/server/Entity.java b/src/main/java/net/minecraft/server/Entity.java
-index 45e7e30892d031df42ae72de28ba4bbe8e1a6cd5..8e287c26f3a10f42459477fb7949d7b4ea00a94d 100644
+index cfb14c54d648e6b8f83382601bd639056ebe2125..820efbb76f16e34bfbf519c6547045cd7050e161 100644
 --- a/src/main/java/net/minecraft/server/Entity.java
 +++ b/src/main/java/net/minecraft/server/Entity.java
 @@ -3,6 +3,7 @@ package net.minecraft.server;
@@ -58,7 +58,7 @@ index 45e7e30892d031df42ae72de28ba4bbe8e1a6cd5..8e287c26f3a10f42459477fb7949d7b4
  import it.unimi.dsi.fastutil.objects.Object2DoubleArrayMap;
  import it.unimi.dsi.fastutil.objects.Object2DoubleMap;
  import java.util.Arrays;
-@@ -1896,6 +1897,7 @@ public abstract class Entity implements INamableTileEntity, ICommandListener, Ke
+@@ -1894,6 +1895,7 @@ public abstract class Entity implements INamableTileEntity, ICommandListener, Ke
              }
              // CraftBukkit end
              EntityItem entityitem = new EntityItem(this.world, this.locX(), this.locY() + (double) f, this.locZ(), itemstack.cloneItemStack()); // Paper - clone so we can destroy original
@@ -66,7 +66,7 @@ index 45e7e30892d031df42ae72de28ba4bbe8e1a6cd5..8e287c26f3a10f42459477fb7949d7b4
              itemstack.setCount(0); // Paper - destroy this item - if this ever leaks due to game bugs, ensure it doesn't dupe
  
              entityitem.defaultPickupDelay();
-@@ -2540,7 +2542,7 @@ public abstract class Entity implements INamableTileEntity, ICommandListener, Ke
+@@ -2539,7 +2541,7 @@ public abstract class Entity implements INamableTileEntity, ICommandListener, Ke
      public Entity teleportTo(WorldServer worldserver, BlockPosition location) {
          // CraftBukkit end
          // Paper start - fix bad state entities causing dupes
@@ -75,7 +75,7 @@ index 45e7e30892d031df42ae72de28ba4bbe8e1a6cd5..8e287c26f3a10f42459477fb7949d7b4
              LOGGER.warn("Illegal Entity Teleport " + this + " to " + worldserver + ":" + location, new Throwable());
              return null;
          }
-@@ -2580,7 +2582,7 @@ public abstract class Entity implements INamableTileEntity, ICommandListener, Ke
+@@ -2579,7 +2581,7 @@ public abstract class Entity implements INamableTileEntity, ICommandListener, Ke
                      entity.bukkitEntity = this.getBukkitEntity();
  
                      if (this instanceof EntityInsentient) {
@@ -84,7 +84,7 @@ index 45e7e30892d031df42ae72de28ba4bbe8e1a6cd5..8e287c26f3a10f42459477fb7949d7b4
                      }
                      // CraftBukkit end
                  }
-@@ -2700,7 +2702,7 @@ public abstract class Entity implements INamableTileEntity, ICommandListener, Ke
+@@ -2699,7 +2701,7 @@ public abstract class Entity implements INamableTileEntity, ICommandListener, Ke
      }
  
      public boolean canPortal() {
@@ -106,7 +106,7 @@ index 6b2c5e8d4640e19d33cbfe76d2399e6100890dbc..8b8ebffb89f11cfbc51b470e77171ea4
  
      }
 diff --git a/src/main/java/net/minecraft/server/EntityFallingBlock.java b/src/main/java/net/minecraft/server/EntityFallingBlock.java
-index 9e9b8d8aef62b423828b69fce4875a2ea8fc9911..153841a1dc3546e8b88eac6bef12a7d7773c269e 100644
+index 492a4cf1a8b1a26624b093d7f6946bfd8277c4f9..bdc26a00f73ac983c633c4bc26971230523fe21a 100644
 --- a/src/main/java/net/minecraft/server/EntityFallingBlock.java
 +++ b/src/main/java/net/minecraft/server/EntityFallingBlock.java
 @@ -1,6 +1,7 @@
@@ -136,7 +136,7 @@ index 9e9b8d8aef62b423828b69fce4875a2ea8fc9911..153841a1dc3546e8b88eac6bef12a7d7
              }
              // Paper end - fix sand duping
 diff --git a/src/main/java/net/minecraft/server/EntityPlayer.java b/src/main/java/net/minecraft/server/EntityPlayer.java
-index 36b04066f7d0b47ec13c0a844c736cabe891d2d0..6e9d352de56280c66d6407e243fd3090736703a7 100644
+index 75f53d1a1c45c2313ebe0e9b7a84932cee67d284..d1953b40c6684f8ebf7fbcd6c240b66b92167794 100644
 --- a/src/main/java/net/minecraft/server/EntityPlayer.java
 +++ b/src/main/java/net/minecraft/server/EntityPlayer.java
 @@ -7,6 +7,7 @@ import com.mojang.authlib.GameProfile;
@@ -157,7 +157,7 @@ index 36b04066f7d0b47ec13c0a844c736cabe891d2d0..6e9d352de56280c66d6407e243fd3090
  
      @Override
 diff --git a/src/main/java/net/minecraft/server/PlayerConnection.java b/src/main/java/net/minecraft/server/PlayerConnection.java
-index e0c3eab9aef950d91920076990215d79d2b710c6..99b4e7aea6c14522de752650feeaf4a1d8e9ff86 100644
+index 05b3a7478195037927cd1a902b603862d9747e61..8d7e88d9d1c401f81d436a1fe363a5ef55ec21ce 100644
 --- a/src/main/java/net/minecraft/server/PlayerConnection.java
 +++ b/src/main/java/net/minecraft/server/PlayerConnection.java
 @@ -5,6 +5,7 @@ import com.google.common.primitives.Floats;
@@ -168,7 +168,7 @@ index e0c3eab9aef950d91920076990215d79d2b710c6..99b4e7aea6c14522de752650feeaf4a1
  import io.netty.util.concurrent.Future;
  import io.netty.util.concurrent.GenericFutureListener;
  import it.unimi.dsi.fastutil.ints.Int2ShortMap;
-@@ -2791,7 +2792,7 @@ public class PlayerConnection implements PacketListenerPlayIn {
+@@ -2796,7 +2797,7 @@ public class PlayerConnection implements PacketListenerPlayIn {
      // Paper end
  
      public final boolean isDisconnected() {
@@ -178,7 +178,7 @@ index e0c3eab9aef950d91920076990215d79d2b710c6..99b4e7aea6c14522de752650feeaf4a1
      // CraftBukkit end
  
 diff --git a/src/main/java/org/bukkit/craftbukkit/event/CraftEventFactory.java b/src/main/java/org/bukkit/craftbukkit/event/CraftEventFactory.java
-index 8193b317bfd16f33873ddf5cd298c98ad0875cf6..da7f01690a6e0a584710de6d1306518b387b5d61 100644
+index 8d5b08cbeb09049d28e2a02c7a5617386eb3fc5e..cf009f553ad02494cb962a40f7abde44d96115df 100644
 --- a/src/main/java/org/bukkit/craftbukkit/event/CraftEventFactory.java
 +++ b/src/main/java/org/bukkit/craftbukkit/event/CraftEventFactory.java
 @@ -4,6 +4,7 @@ import com.google.common.base.Function;
@@ -189,7 +189,7 @@ index 8193b317bfd16f33873ddf5cd298c98ad0875cf6..da7f01690a6e0a584710de6d1306518b
  import java.net.InetAddress;
  import java.util.ArrayList;
  import java.util.Collections;
-@@ -811,6 +812,7 @@ public class CraftEventFactory {
+@@ -812,6 +813,7 @@ public class CraftEventFactory {
              if (stack == null || stack.getType() == Material.AIR || stack.getAmount() == 0) continue;
  
              world.dropItem(entity.getLocation(), stack); // Paper - note: dropItem already clones due to this being bukkit -> NMS
