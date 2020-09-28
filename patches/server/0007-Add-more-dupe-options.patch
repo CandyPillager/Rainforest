@@ -47,7 +47,7 @@ index 22d920686418e86aec8be37f125123682af023a3..ff5970377ad1d71ec4065938a62bd5a7
 +  }
  }
 diff --git a/src/main/java/net/minecraft/server/Entity.java b/src/main/java/net/minecraft/server/Entity.java
-index cfb14c54d648e6b8f83382601bd639056ebe2125..820efbb76f16e34bfbf519c6547045cd7050e161 100644
+index 5e1978d1c96dede07ead967c1e85a352348e7777..31bc5a451b57f72204716c44834325d82e872085 100644
 --- a/src/main/java/net/minecraft/server/Entity.java
 +++ b/src/main/java/net/minecraft/server/Entity.java
 @@ -3,6 +3,7 @@ package net.minecraft.server;
@@ -58,7 +58,7 @@ index cfb14c54d648e6b8f83382601bd639056ebe2125..820efbb76f16e34bfbf519c6547045cd
  import it.unimi.dsi.fastutil.objects.Object2DoubleArrayMap;
  import it.unimi.dsi.fastutil.objects.Object2DoubleMap;
  import java.util.Arrays;
-@@ -1894,6 +1895,7 @@ public abstract class Entity implements INamableTileEntity, ICommandListener, Ke
+@@ -1910,6 +1911,7 @@ public abstract class Entity implements INamableTileEntity, ICommandListener, Ke
              }
              // CraftBukkit end
              EntityItem entityitem = new EntityItem(this.world, this.locX(), this.locY() + (double) f, this.locZ(), itemstack.cloneItemStack()); // Paper - clone so we can destroy original
@@ -66,7 +66,7 @@ index cfb14c54d648e6b8f83382601bd639056ebe2125..820efbb76f16e34bfbf519c6547045cd
              itemstack.setCount(0); // Paper - destroy this item - if this ever leaks due to game bugs, ensure it doesn't dupe
  
              entityitem.defaultPickupDelay();
-@@ -2539,7 +2541,7 @@ public abstract class Entity implements INamableTileEntity, ICommandListener, Ke
+@@ -2559,7 +2561,7 @@ public abstract class Entity implements INamableTileEntity, ICommandListener, Ke
      public Entity teleportTo(WorldServer worldserver, BlockPosition location) {
          // CraftBukkit end
          // Paper start - fix bad state entities causing dupes
@@ -75,7 +75,7 @@ index cfb14c54d648e6b8f83382601bd639056ebe2125..820efbb76f16e34bfbf519c6547045cd
              LOGGER.warn("Illegal Entity Teleport " + this + " to " + worldserver + ":" + location, new Throwable());
              return null;
          }
-@@ -2579,7 +2581,7 @@ public abstract class Entity implements INamableTileEntity, ICommandListener, Ke
+@@ -2599,7 +2601,7 @@ public abstract class Entity implements INamableTileEntity, ICommandListener, Ke
                      entity.bukkitEntity = this.getBukkitEntity();
  
                      if (this instanceof EntityInsentient) {
@@ -84,7 +84,7 @@ index cfb14c54d648e6b8f83382601bd639056ebe2125..820efbb76f16e34bfbf519c6547045cd
                      }
                      // CraftBukkit end
                  }
-@@ -2699,7 +2701,7 @@ public abstract class Entity implements INamableTileEntity, ICommandListener, Ke
+@@ -2719,7 +2721,7 @@ public abstract class Entity implements INamableTileEntity, ICommandListener, Ke
      }
  
      public boolean canPortal() {

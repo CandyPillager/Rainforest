@@ -405,7 +405,7 @@ index f55dc28f3e220966199ec718a437e50ef4b76027..713b2f3acdfff2fe8db9149f8397b0f2
          this.setPVP(dedicatedserverproperties.pvp);
          this.setAllowFlight(dedicatedserverproperties.allowFlight);
 diff --git a/src/main/java/net/minecraft/server/World.java b/src/main/java/net/minecraft/server/World.java
-index eaa285393454771052fae7676d2983ec2efae10b..022e94b9db93f145b2989a2eccce63788a51790f 100644
+index eec338649edbdaebbe694a23ccb7a8b5cd5f9a15..a8c99d6f8c46f0fbe7e312de99d3d749c1c25cea 100644
 --- a/src/main/java/net/minecraft/server/World.java
 +++ b/src/main/java/net/minecraft/server/World.java
 @@ -9,6 +9,7 @@ import com.destroystokyo.paper.exception.ServerInternalException;
@@ -468,7 +468,7 @@ index 8dd97966c0ce019aabe989e768b6c99459ff0ac1..7a819d4ee6a0884c487476e87d50f6f6
          public void restart() {
              org.spigotmc.RestartCommand.restart();
 diff --git a/src/main/java/org/bukkit/craftbukkit/Main.java b/src/main/java/org/bukkit/craftbukkit/Main.java
-index 43131f1c89d0160c1423d57e772b13789822bb68..5196fbc59c49663a2b899de4ba487ed8885f4611 100644
+index cc7740d9c54a1c61b57e3ca48b6e9a3d1ce9149d..f816bc2a4acc00736e392300d96c905e3374a9ec 100644
 --- a/src/main/java/org/bukkit/craftbukkit/Main.java
 +++ b/src/main/java/org/bukkit/craftbukkit/Main.java
 @@ -139,6 +139,14 @@ public class Main {
