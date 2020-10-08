@@ -47,7 +47,7 @@ index 22d920686418e86aec8be37f125123682af023a3..ff5970377ad1d71ec4065938a62bd5a7
 +  }
  }
 diff --git a/src/main/java/net/minecraft/server/Entity.java b/src/main/java/net/minecraft/server/Entity.java
-index 5e1978d1c96dede07ead967c1e85a352348e7777..31bc5a451b57f72204716c44834325d82e872085 100644
+index 28e2d3f0a5e2ab084175bf0bba88816f80089799..961a0e9f67a89f97fd08015e8f716726887c332e 100644
 --- a/src/main/java/net/minecraft/server/Entity.java
 +++ b/src/main/java/net/minecraft/server/Entity.java
 @@ -3,6 +3,7 @@ package net.minecraft.server;
@@ -136,7 +136,7 @@ index 492a4cf1a8b1a26624b093d7f6946bfd8277c4f9..bdc26a00f73ac983c633c4bc26971230
              }
              // Paper end - fix sand duping
 diff --git a/src/main/java/net/minecraft/server/EntityPlayer.java b/src/main/java/net/minecraft/server/EntityPlayer.java
-index 75f53d1a1c45c2313ebe0e9b7a84932cee67d284..d1953b40c6684f8ebf7fbcd6c240b66b92167794 100644
+index 8e1655a975af24f6781a95be7030afa8f1b14472..fbbdc47efdc54dd0becc4f2873893eb3ed156835 100644
 --- a/src/main/java/net/minecraft/server/EntityPlayer.java
 +++ b/src/main/java/net/minecraft/server/EntityPlayer.java
 @@ -7,6 +7,7 @@ import com.mojang.authlib.GameProfile;
@@ -147,7 +147,7 @@ index 75f53d1a1c45c2313ebe0e9b7a84932cee67d284..d1953b40c6684f8ebf7fbcd6c240b66b
  import java.util.Collection;
  import java.util.Deque; // Paper
  import java.util.Iterator;
-@@ -2097,7 +2098,7 @@ public class EntityPlayer extends EntityHuman implements ICrafting {
+@@ -2076,7 +2077,7 @@ public class EntityPlayer extends EntityHuman implements ICrafting {
  
      @Override
      public boolean isFrozen() { // Paper - protected > public
@@ -178,7 +178,7 @@ index 05b3a7478195037927cd1a902b603862d9747e61..8d7e88d9d1c401f81d436a1fe363a5ef
      // CraftBukkit end
  
 diff --git a/src/main/java/org/bukkit/craftbukkit/event/CraftEventFactory.java b/src/main/java/org/bukkit/craftbukkit/event/CraftEventFactory.java
-index 8d5b08cbeb09049d28e2a02c7a5617386eb3fc5e..cf009f553ad02494cb962a40f7abde44d96115df 100644
+index 0f0d70c0622558740086f0f7cf89e5500128f955..f021bb37af08a83aec0aa18c98e6e49c23cca44e 100644
 --- a/src/main/java/org/bukkit/craftbukkit/event/CraftEventFactory.java
 +++ b/src/main/java/org/bukkit/craftbukkit/event/CraftEventFactory.java
 @@ -4,6 +4,7 @@ import com.google.common.base.Function;

@@ -156,7 +156,7 @@ index 49a38c6608b652ff48ef4eaca0dd3ccb1ba570e3..52daae9d04453add94353d9b9ff6c827
          switch (distance) {
              case -1:
 diff --git a/src/main/java/net/minecraft/server/MinecraftServer.java b/src/main/java/net/minecraft/server/MinecraftServer.java
-index 883c17f00b3766b1e4e308bf9baf0ab07d6475bf..4f3878e0a1844fd72534069a345f9f3a7f0eae7c 100644
+index 26bbfeba138f506200aad667b6f910b8fc0d2d6a..d5a87dbf0685e65bdecb69f962b7c30cf61c5afd 100644
 --- a/src/main/java/net/minecraft/server/MinecraftServer.java
 +++ b/src/main/java/net/minecraft/server/MinecraftServer.java
 @@ -1451,7 +1451,7 @@ public abstract class MinecraftServer extends IAsyncTaskHandlerReentrant<TickTas

@@ -23,10 +23,10 @@ index e698f8c8c3bfbd96465e7f7c3c3fee63ff0efd22..e0af5eb280dfd2ef6c9a80385e1705f7
 +  }
  }
 diff --git a/src/main/java/net/minecraft/server/PlayerList.java b/src/main/java/net/minecraft/server/PlayerList.java
-index 70cc21ea9037318ae569709ba8ea2e3bc9b3eb26..0cb243a7a58e0be57f8e81cbdc41b1fd82facbf1 100644
+index 38f26e25cb7d022c0bec5a5928db70611a0d347a..d154de86d83755cd773d6166fe0f2b8e7794e6c3 100644
 --- a/src/main/java/net/minecraft/server/PlayerList.java
 +++ b/src/main/java/net/minecraft/server/PlayerList.java
-@@ -189,7 +189,7 @@ public abstract class PlayerList {
+@@ -188,7 +188,7 @@ public abstract class PlayerList {
          // Spigot - view distance
          playerconnection.sendPacket(new PacketPlayOutLogin(entityplayer.getId(), entityplayer.playerInteractManager.getGameMode(), entityplayer.playerInteractManager.c(), BiomeManager.a(worldserver1.getSeed()), worlddata.isHardcore(), this.server.F(), this.s, worldserver1.getDimensionManager(), worldserver1.getDimensionKey(), this.getMaxPlayers(), worldserver1.getChunkProvider().playerChunkMap.getLoadViewDistance(), flag1, !flag, worldserver1.isDebugWorld(), worldserver1.isFlatWorld())); // Paper - no-tick view distance
          entityplayer.getBukkitEntity().sendSupportedChannels(); // CraftBukkit
