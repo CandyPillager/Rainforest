@@ -1,0 +1,40 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Mariell Hoversholm <proximyst@proximyst.com>
+Date: Sat, 31 Oct 2020 09:55:46 +0100
+Subject: [PATCH] Toggle for removing existing dragon
+
+---
+ .../com/proximyst/rainforest/RainforestWorldConfig.java   | 8 ++++++++
+ src/main/java/net/minecraft/server/EnderDragonBattle.java | 2 +-
+ 2 files changed, 9 insertions(+), 1 deletion(-)
+
+diff --git a/src/main/java/com/proximyst/rainforest/RainforestWorldConfig.java b/src/main/java/com/proximyst/rainforest/RainforestWorldConfig.java
+index ff5970377ad1d71ec4065938a62bd5a7261e1fbc..b470a6f186e31eda5dabe1abfe03d5fcd8321ba7 100644
+--- a/src/main/java/com/proximyst/rainforest/RainforestWorldConfig.java
++++ b/src/main/java/com/proximyst/rainforest/RainforestWorldConfig.java
+@@ -70,4 +70,12 @@ public final class RainforestWorldConfig {
+   private void dupeOptions() {
+     allowEnderDragonExpDuping = getBoolean("allow-dragon-exp-duping", allowEnderDragonExpDuping);
+   }
++
++  public boolean shouldRemoveDragon = false;
++  private void shouldRemoveDragon() {
++    shouldRemoveDragon = getBoolean("should-remove-dragon", shouldRemoveDragon);
++    if (shouldRemoveDragon) {
++      log("The Ender Dragon will be removed if she already exists without a portal.");
++    }
++  }
+ }
+diff --git a/src/main/java/net/minecraft/server/EnderDragonBattle.java b/src/main/java/net/minecraft/server/EnderDragonBattle.java
+index 95ecf9dd511836cc2f70173f07234ef8822d6038..ac8bf5eda5c8fb801cf84d31f5c0d16d15a7782d 100644
+--- a/src/main/java/net/minecraft/server/EnderDragonBattle.java
++++ b/src/main/java/net/minecraft/server/EnderDragonBattle.java
+@@ -172,7 +172,7 @@ public class EnderDragonBattle {
+             this.dragonUUID = entityenderdragon.getUniqueID();
+             EnderDragonBattle.LOGGER.info("Found that there's a dragon still alive ({})", entityenderdragon);
+             this.dragonKilled = false;
+-            if (!flag) {
++            if (!flag && this.world.rainforestConfig.shouldRemoveDragon) { // Rainforest
+                 EnderDragonBattle.LOGGER.info("But we didn't have a portal, let's remove it.");
+                 entityenderdragon.die();
+                 this.dragonUUID = null;
