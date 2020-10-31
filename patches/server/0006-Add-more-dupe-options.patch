@@ -47,7 +47,7 @@ index 22d920686418e86aec8be37f125123682af023a3..ff5970377ad1d71ec4065938a62bd5a7
 +  }
  }
 diff --git a/src/main/java/net/minecraft/server/Entity.java b/src/main/java/net/minecraft/server/Entity.java
-index 28e2d3f0a5e2ab084175bf0bba88816f80089799..961a0e9f67a89f97fd08015e8f716726887c332e 100644
+index b845e488e3b9a4f19d1fcf169533046b7e72ba28..4ec409b9793641a8447d9811c6384495a0fca99c 100644
 --- a/src/main/java/net/minecraft/server/Entity.java
 +++ b/src/main/java/net/minecraft/server/Entity.java
 @@ -3,6 +3,7 @@ package net.minecraft.server;
@@ -157,7 +157,7 @@ index 8e1655a975af24f6781a95be7030afa8f1b14472..fbbdc47efdc54dd0becc4f2873893eb3
  
      @Override
 diff --git a/src/main/java/net/minecraft/server/PlayerConnection.java b/src/main/java/net/minecraft/server/PlayerConnection.java
-index 05b3a7478195037927cd1a902b603862d9747e61..8d7e88d9d1c401f81d436a1fe363a5ef55ec21ce 100644
+index 4b0ff3e1acd91e0f28af9a900a4868c5a3b76caa..fd1c4452999a6fb16891d74b7d5562f015e30f70 100644
 --- a/src/main/java/net/minecraft/server/PlayerConnection.java
 +++ b/src/main/java/net/minecraft/server/PlayerConnection.java
 @@ -5,6 +5,7 @@ import com.google.common.primitives.Floats;
@@ -168,7 +168,7 @@ index 05b3a7478195037927cd1a902b603862d9747e61..8d7e88d9d1c401f81d436a1fe363a5ef
  import io.netty.util.concurrent.Future;
  import io.netty.util.concurrent.GenericFutureListener;
  import it.unimi.dsi.fastutil.ints.Int2ShortMap;
-@@ -2796,7 +2797,7 @@ public class PlayerConnection implements PacketListenerPlayIn {
+@@ -2806,7 +2807,7 @@ public class PlayerConnection implements PacketListenerPlayIn {
      // Paper end
  
      public final boolean isDisconnected() {

@@ -8,7 +8,7 @@ Subject: [PATCH] Rainforest brand change
  1 file changed, 6 insertions(+), 6 deletions(-)
 
 diff --git a/pom.xml b/pom.xml
-index 29dafd4b937e635bcce7b3712122ad3452fedfc2..835b3a1a86287445e08d56cdb5eca740274d93ea 100644
+index a22e6517d55d0296421a9f751d5e6d0448a5a2a8..7c6a9379928b4ad8c4e64f0893156ff4ed6f5ba7 100644
 --- a/pom.xml
 +++ b/pom.xml
 @@ -3,18 +3,18 @@
