@@ -1,0 +1,62 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Mariell Hoversholm <proximyst@proximyst.com>
+Date: Sat, 31 Oct 2020 10:00:25 +0100
+Subject: [PATCH] Use correct sender UUID for chat messages
+
+---
+ src/main/java/net/minecraft/server/EntityPlayer.java     | 8 +++++++-
+ src/main/java/net/minecraft/server/PlayerConnection.java | 8 ++++----
+ 2 files changed, 11 insertions(+), 5 deletions(-)
+
+diff --git a/src/main/java/net/minecraft/server/EntityPlayer.java b/src/main/java/net/minecraft/server/EntityPlayer.java
+index fbbdc47efdc54dd0becc4f2873893eb3ed156835..0e389e815f5d86126be33936bab13047e14841b3 100644
+--- a/src/main/java/net/minecraft/server/EntityPlayer.java
++++ b/src/main/java/net/minecraft/server/EntityPlayer.java
+@@ -1484,8 +1484,14 @@ public class EntityPlayer extends EntityHuman implements ICrafting {
+ 
+     // CraftBukkit start - Support multi-line messages
+     public void sendMessage(IChatBaseComponent[] ichatbasecomponent) {
++        // Rainforest start - add sender UUID
++        sendMessage(ichatbasecomponent, null);
++    }
++
++    public void sendMessage(IChatBaseComponent[] ichatbasecomponent, UUID sender) {
+         for (IChatBaseComponent component : ichatbasecomponent) {
+-            this.sendMessage(component, SystemUtils.b);
++            this.sendMessage(component, sender == null ? SystemUtils.b : sender);
++            // Rainforest end
+         }
+     }
+     // CraftBukkit end
+diff --git a/src/main/java/net/minecraft/server/PlayerConnection.java b/src/main/java/net/minecraft/server/PlayerConnection.java
+index fd1c4452999a6fb16891d74b7d5562f015e30f70..83c4153ad2ca4ccce8e93da24f206ea809b24fac 100644
+--- a/src/main/java/net/minecraft/server/PlayerConnection.java
++++ b/src/main/java/net/minecraft/server/PlayerConnection.java
+@@ -1848,11 +1848,11 @@ public class PlayerConnection implements PacketListenerPlayIn {
+                         PlayerConnection.this.minecraftServer.console.sendMessage(message);
+                         if (((LazyPlayerSet) queueEvent.getRecipients()).isLazy()) {
+                             for (Object player : PlayerConnection.this.minecraftServer.getPlayerList().players) {
+-                                ((EntityPlayer) player).sendMessage(CraftChatMessage.fromString(message));
++                                ((EntityPlayer) player).sendMessage(CraftChatMessage.fromString(message), PlayerConnection.this.player.getUniqueID()); // Rainforest
+                             }
+                         } else {
+                             for (Player player : queueEvent.getRecipients()) {
+-                                player.sendMessage(message);
++                                player.sendMessage(PlayerConnection.this.player.getUniqueID(), message); // Rainforest
+                             }
+                         }
+                         return null;
+@@ -1887,11 +1887,11 @@ public class PlayerConnection implements PacketListenerPlayIn {
+                 minecraftServer.console.sendMessage(s);
+                 if (((LazyPlayerSet) event.getRecipients()).isLazy()) {
+                     for (Object recipient : minecraftServer.getPlayerList().players) {
+-                        ((EntityPlayer) recipient).sendMessage(CraftChatMessage.fromString(s));
++                        ((EntityPlayer) recipient).sendMessage(CraftChatMessage.fromString(s), PlayerConnection.this.player.getUniqueID()); // Rainforest
+                     }
+                 } else {
+                     for (Player recipient : event.getRecipients()) {
+-                        recipient.sendMessage(s);
++                        recipient.sendMessage(PlayerConnection.this.player.getUniqueID(), s); // Rainforest
+                     }
+                 }
+             }
