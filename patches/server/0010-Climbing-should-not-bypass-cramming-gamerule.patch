@@ -31,10 +31,10 @@ index b470a6f186e31eda5dabe1abfe03d5fcd8321ba7..384264e54d38b8b34e77973254392024
 +  }
  }
 diff --git a/src/main/java/net/minecraft/server/Entity.java b/src/main/java/net/minecraft/server/Entity.java
-index 4ec409b9793641a8447d9811c6384495a0fca99c..61929650e85d19db85aa044f6ec5c527245206c6 100644
+index 0ae2c8be466a7ff7f33c652e2159a818c032f060..02d3fe4ea05b3f439b08c6140aaa3689d9fcd4d5 100644
 --- a/src/main/java/net/minecraft/server/Entity.java
 +++ b/src/main/java/net/minecraft/server/Entity.java
-@@ -1483,6 +1483,12 @@ public abstract class Entity implements INamableTileEntity, ICommandListener, Ke
+@@ -1484,6 +1484,12 @@ public abstract class Entity implements INamableTileEntity, ICommandListener, Ke
      }
  
      public boolean isCollidable() {
@@ -48,7 +48,7 @@ index 4ec409b9793641a8447d9811c6384495a0fca99c..61929650e85d19db85aa044f6ec5c527
      }
  
 diff --git a/src/main/java/net/minecraft/server/EntityArmorStand.java b/src/main/java/net/minecraft/server/EntityArmorStand.java
-index aff83945242c843d8cfd8dffc4c33298f38fb9f2..6bda56372b00d3caa9a2499b4a156ae495f6d8fb 100644
+index 66597c6e1add4df2f093480f507f03788a3eb30b..dfb63c9b0f369c50206c912d4e6dc72ae209038a 100644
 --- a/src/main/java/net/minecraft/server/EntityArmorStand.java
 +++ b/src/main/java/net/minecraft/server/EntityArmorStand.java
 @@ -320,7 +320,7 @@ public class EntityArmorStand extends EntityLiving {
@@ -61,7 +61,7 @@ index aff83945242c843d8cfd8dffc4c33298f38fb9f2..6bda56372b00d3caa9a2499b4a156ae4
      }
  
 diff --git a/src/main/java/net/minecraft/server/EntityBat.java b/src/main/java/net/minecraft/server/EntityBat.java
-index af67cf86839e3b8c028d47fd9b65513e0ab24e70..79ccfa997792a5e64bf7dc4d2180fa57c942a9a6 100644
+index 38ce3563106b02bfefb54a637713f27262ff258f..d576a6ced8499a84f48af9f46ceb1b16dcb3ad88 100644
 --- a/src/main/java/net/minecraft/server/EntityBat.java
 +++ b/src/main/java/net/minecraft/server/EntityBat.java
 @@ -50,7 +50,7 @@ public class EntityBat extends EntityAmbient {
@@ -74,7 +74,7 @@ index af67cf86839e3b8c028d47fd9b65513e0ab24e70..79ccfa997792a5e64bf7dc4d2180fa57
      }
  
 diff --git a/src/main/java/net/minecraft/server/EntityBoat.java b/src/main/java/net/minecraft/server/EntityBoat.java
-index 5d14c235b4badfc49d5f3cd83c159c1775782ea6..e194065fd67cc2600d26b9d02c1687c9b536e831 100644
+index 45fea38933d57e52dea19317c65682d57114a077..4f0e597c7127fc0d54281a26da93767e75e43a37 100644
 --- a/src/main/java/net/minecraft/server/EntityBoat.java
 +++ b/src/main/java/net/minecraft/server/EntityBoat.java
 @@ -106,7 +106,7 @@ public class EntityBoat extends Entity {
@@ -87,7 +87,7 @@ index 5d14c235b4badfc49d5f3cd83c159c1775782ea6..e194065fd67cc2600d26b9d02c1687c9
      }
  
 diff --git a/src/main/java/net/minecraft/server/EntityHorseAbstract.java b/src/main/java/net/minecraft/server/EntityHorseAbstract.java
-index 191d9cb8279cabdb5441fb10a107eb119e0fe9d0..e28f0f0550cbc40232669b7f779d8c72c2fd375e 100644
+index 8af1fe5d820f3bcb5e02dd2300e8e9cbd7e4e201..d34c8cad587b366da6ed706a3ba4f62eb5fb270b 100644
 --- a/src/main/java/net/minecraft/server/EntityHorseAbstract.java
 +++ b/src/main/java/net/minecraft/server/EntityHorseAbstract.java
 @@ -165,7 +165,7 @@ public abstract class EntityHorseAbstract extends EntityAnimal implements IInven
@@ -100,7 +100,7 @@ index 191d9cb8279cabdb5441fb10a107eb119e0fe9d0..e28f0f0550cbc40232669b7f779d8c72
      }
  
 diff --git a/src/main/java/net/minecraft/server/EntityLiving.java b/src/main/java/net/minecraft/server/EntityLiving.java
-index 76185f042dd773f267dc7574116cec7bd8a28ca8..481b779c4c441d42242ff308e33c0b23fd410fdd 100644
+index fe0334b505de64ae1d96c4f0b6e66313d2b40010..6f0fd966f5ec30060f2f79c0fb8d3141e7aef0cd 100644
 --- a/src/main/java/net/minecraft/server/EntityLiving.java
 +++ b/src/main/java/net/minecraft/server/EntityLiving.java
 @@ -2847,7 +2847,7 @@ public abstract class EntityLiving extends Entity {
@@ -129,7 +129,7 @@ index 76185f042dd773f267dc7574116cec7bd8a28ca8..481b779c4c441d42242ff308e33c0b23
  
      // CraftBukkit start - collidable API
 diff --git a/src/main/java/net/minecraft/server/EntityMinecartAbstract.java b/src/main/java/net/minecraft/server/EntityMinecartAbstract.java
-index 9bc21ef8a1f366f77ceb31b8bd01e6cc6b8a17a5..e1a5852bc1037c3a1fa7faaf0921fcbd4c6a922d 100644
+index 9af2bb392881900d74803cccd093d96b08673a25..7a61b7d485b52ce69137e07f7672aec24e3b8c98 100644
 --- a/src/main/java/net/minecraft/server/EntityMinecartAbstract.java
 +++ b/src/main/java/net/minecraft/server/EntityMinecartAbstract.java
 @@ -107,7 +107,7 @@ public abstract class EntityMinecartAbstract extends Entity {
@@ -142,7 +142,7 @@ index 9bc21ef8a1f366f77ceb31b8bd01e6cc6b8a17a5..e1a5852bc1037c3a1fa7faaf0921fcbd
      }
  
 diff --git a/src/main/java/net/minecraft/server/EntityParrot.java b/src/main/java/net/minecraft/server/EntityParrot.java
-index 34e08dda2e16cd4a6ecd8d8c6dc89f090ec2bc56..4de6eaabff7527081d3aeaebb44d3344f1c318b1 100644
+index 1c682a62b8fd871848ebe8ff0dc576da6bb28810..ae0315e2e8e16682da10bc48ff90418e2ca7e5c3 100644
 --- a/src/main/java/net/minecraft/server/EntityParrot.java
 +++ b/src/main/java/net/minecraft/server/EntityParrot.java
 @@ -314,8 +314,8 @@ public class EntityParrot extends EntityPerchable implements EntityBird {
@@ -157,7 +157,7 @@ index 34e08dda2e16cd4a6ecd8d8c6dc89f090ec2bc56..4de6eaabff7527081d3aeaebb44d3344
  
      @Override
 diff --git a/src/main/java/net/minecraft/server/IEntitySelector.java b/src/main/java/net/minecraft/server/IEntitySelector.java
-index a9b0c78d6dba8c6ff7d524e2828f0ee7832e059e..d9218d36b4c4747cfe0917b476173a5640e8c597 100644
+index 31eb6868c2de20a7aa7438dbabf7a5f790d75732..887a500acd0eb0c51eca0cc6bc9786064cfee3d7 100644
 --- a/src/main/java/net/minecraft/server/IEntitySelector.java
 +++ b/src/main/java/net/minecraft/server/IEntitySelector.java
 @@ -42,11 +42,17 @@ public final class IEntitySelector {
@@ -177,5 +177,5 @@ index a9b0c78d6dba8c6ff7d524e2828f0ee7832e059e..d9218d36b4c4747cfe0917b476173a56
 -            if (!entity1.canCollideWith(entity) || !entity.canCollideWith(entity1)) { // CraftBukkit - collidable API
 +            if (!entity.isCollidable(ignoreClimbing) || !entity1.isCollidable(ignoreClimbing) || !entity1.canCollideWith(entity) || !entity.canCollideWith(entity1)) { // CraftBukkit - collidable API // Rainforest - isCollidable(Z)Z
                  return false;
-             } else if (entity.world.isClientSide && (!(entity1 instanceof EntityHuman) || !((EntityHuman) entity1).ey())) {
+             } else if (entity.world.isClientSide && (!(entity1 instanceof EntityHuman) || !((EntityHuman) entity1).ez())) {
                  return false;

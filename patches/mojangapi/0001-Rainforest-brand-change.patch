@@ -48,7 +48,7 @@ index 0000000000000000000000000000000000000000..e431e3435737e28394d81b56568a08b3
 +*.iws
 +.idea/
 diff --git a/pom.xml b/pom.xml
-index ef3ab575b2ab23f4d73438d07b870228b33e0f37..e3fd38822753fd072f9d10205cfecccf08b63963 100644
+index 7075a42db171500e56eba0a2a55f37bd1c6588c2..9601c1cf85f51c47a4f18ac91d4299f23552c025 100644
 --- a/pom.xml
 +++ b/pom.xml
 @@ -3,18 +3,17 @@
@@ -65,7 +65,7 @@ index ef3ab575b2ab23f4d73438d07b870228b33e0f37..e3fd38822753fd072f9d10205cfecccf
 -    <groupId>com.destroystokyo.paper</groupId>
 -    <artifactId>paper-mojangapi</artifactId>
 +    <artifactId>rainforest-mojangapi</artifactId> <!-- Rainforest -->
-     <version>1.16.3-R0.1-SNAPSHOT</version>
+     <version>1.16.4-R0.1-SNAPSHOT</version>
      <packaging>jar</packaging>
  
 -    <name>Paper-MojangAPI</name>

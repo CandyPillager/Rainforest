@@ -8,10 +8,10 @@ Subject: [PATCH] Add Rainforest config
  1 file changed, 8 insertions(+)
 
 diff --git a/src/main/java/org/bukkit/Server.java b/src/main/java/org/bukkit/Server.java
-index 7c0a788900c93c29d14d8c45ac5ae3317cf4a94e..968406b816c7da0e314c93f09b4a666c80678274 100644
+index 3e6331807f2c411cef3c2774a503f162685e8b46..2bb65381595b93f8cb3e0a0257abc0f2285d9e05 100644
 --- a/src/main/java/org/bukkit/Server.java
 +++ b/src/main/java/org/bukkit/Server.java
-@@ -1456,6 +1456,14 @@ public interface Server extends PluginMessageRecipient {
+@@ -1475,6 +1475,14 @@ public interface Server extends PluginMessageRecipient {
          }
          // Paper end
  
