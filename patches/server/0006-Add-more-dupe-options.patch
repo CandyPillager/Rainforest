@@ -136,7 +136,7 @@ index 76aac1b131f314775e418339e434f4f2da2ad619..8d914a913769f754cea648d2eac509a1
              }
              // Paper end - fix sand duping
 diff --git a/src/main/java/net/minecraft/server/EntityPlayer.java b/src/main/java/net/minecraft/server/EntityPlayer.java
-index 56677b8bf45af217c0a4a50fc7aea76ca012cbd7..e0700713b21d01be632919874c2411c77a1ede15 100644
+index 976c44c8eeecc513fa11de55b80317550f621407..1de58c08bd151c2a1c2e624b8068cf4a37884929 100644
 --- a/src/main/java/net/minecraft/server/EntityPlayer.java
 +++ b/src/main/java/net/minecraft/server/EntityPlayer.java
 @@ -7,6 +7,7 @@ import com.mojang.authlib.GameProfile;
@@ -147,7 +147,7 @@ index 56677b8bf45af217c0a4a50fc7aea76ca012cbd7..e0700713b21d01be632919874c2411c7
  import java.util.Collection;
  import java.util.Deque; // Paper
  import java.util.Iterator;
-@@ -2084,7 +2085,7 @@ public class EntityPlayer extends EntityHuman implements ICrafting {
+@@ -2085,7 +2086,7 @@ public class EntityPlayer extends EntityHuman implements ICrafting {
  
      @Override
      public boolean isFrozen() { // Paper - protected > public
@@ -157,7 +157,7 @@ index 56677b8bf45af217c0a4a50fc7aea76ca012cbd7..e0700713b21d01be632919874c2411c7
  
      @Override
 diff --git a/src/main/java/net/minecraft/server/PlayerConnection.java b/src/main/java/net/minecraft/server/PlayerConnection.java
-index 563ae7355f4f4645d21f2fbd494a5b5656c5e664..76bd28bba3feabcfa1ccd6cea772b8e1f4660f39 100644
+index a736d676ef5e3a25c144743af559bfb46e294db7..83e6804f8f0b00b6bb0d1f7a3287f38baa60852c 100644
 --- a/src/main/java/net/minecraft/server/PlayerConnection.java
 +++ b/src/main/java/net/minecraft/server/PlayerConnection.java
 @@ -6,6 +6,7 @@ import com.google.common.primitives.Floats;
@@ -168,7 +168,7 @@ index 563ae7355f4f4645d21f2fbd494a5b5656c5e664..76bd28bba3feabcfa1ccd6cea772b8e1
  import io.netty.util.concurrent.Future;
  import io.netty.util.concurrent.GenericFutureListener;
  import it.unimi.dsi.fastutil.ints.Int2ShortMap;
-@@ -2901,7 +2902,7 @@ public class PlayerConnection implements PacketListenerPlayIn {
+@@ -2902,7 +2903,7 @@ public class PlayerConnection implements PacketListenerPlayIn {
      // Paper end
  
      public final boolean isDisconnected() {

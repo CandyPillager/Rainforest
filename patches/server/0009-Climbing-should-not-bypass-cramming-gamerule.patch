@@ -17,12 +17,12 @@ Subject: [PATCH] Climbing should not bypass cramming gamerule
  10 files changed, 34 insertions(+), 10 deletions(-)
 
 diff --git a/src/main/java/com/proximyst/rainforest/RainforestWorldConfig.java b/src/main/java/com/proximyst/rainforest/RainforestWorldConfig.java
-index b470a6f186e31eda5dabe1abfe03d5fcd8321ba7..384264e54d38b8b34e77973254392024ee11adf4 100644
+index ff5970377ad1d71ec4065938a62bd5a7261e1fbc..d15b21947df591697e71d3f20cbec5ec0c83541a 100644
 --- a/src/main/java/com/proximyst/rainforest/RainforestWorldConfig.java
 +++ b/src/main/java/com/proximyst/rainforest/RainforestWorldConfig.java
-@@ -78,4 +78,9 @@ public final class RainforestWorldConfig {
-       log("The Ender Dragon will be removed if she already exists without a portal.");
-     }
+@@ -70,4 +70,9 @@ public final class RainforestWorldConfig {
+   private void dupeOptions() {
+     allowEnderDragonExpDuping = getBoolean("allow-dragon-exp-duping", allowEnderDragonExpDuping);
    }
 +
 +  public boolean fixClimbingBypassingCrammingRule = false;

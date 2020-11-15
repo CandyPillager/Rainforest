@@ -8,10 +8,10 @@ Subject: [PATCH] Invalid data is not always caught
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/src/main/java/net/minecraft/server/AdvancementDataPlayer.java b/src/main/java/net/minecraft/server/AdvancementDataPlayer.java
-index 17789407b9e86896a963a305a13357286aa5f319..2af574477658019b07651f7fa25e5806080beeaa 100644
+index c680319e4040be2b60795b22a5e65d6444cc67ed..595f615eb43b07d1315af55041367c965f6dbda1 100644
 --- a/src/main/java/net/minecraft/server/AdvancementDataPlayer.java
 +++ b/src/main/java/net/minecraft/server/AdvancementDataPlayer.java
-@@ -193,7 +193,7 @@ public class AdvancementDataPlayer {
+@@ -194,7 +194,7 @@ public class AdvancementDataPlayer {
                      }
  
                  }

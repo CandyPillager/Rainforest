@@ -405,7 +405,7 @@ index 5504facd2e453238caa71d98743be5416d4dd4fe..5bd0430a78d2176c7c109965a5f40454
          this.setPVP(dedicatedserverproperties.pvp);
          this.setAllowFlight(dedicatedserverproperties.allowFlight);
 diff --git a/src/main/java/net/minecraft/server/World.java b/src/main/java/net/minecraft/server/World.java
-index d64d94b8c329ddce27151afc012ecfe26b5ee707..d4df9e68fdadd0494fef8c0dd2b3a5acbb282d2f 100644
+index f260da1fd253ebd233d741809acf8a020779744b..8c6bc7c7a3ea4e793cf614ff09d7a9f9f7e5f077 100644
 --- a/src/main/java/net/minecraft/server/World.java
 +++ b/src/main/java/net/minecraft/server/World.java
 @@ -9,6 +9,7 @@ import com.destroystokyo.paper.exception.ServerInternalException;
