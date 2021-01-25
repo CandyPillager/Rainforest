@@ -9,10 +9,10 @@ Subject: [PATCH] Unsafe entity API
  2 files changed, 79 insertions(+)
 
 diff --git a/src/main/java/org/bukkit/entity/Entity.java b/src/main/java/org/bukkit/entity/Entity.java
-index ff2e4fc8a632453e280f1a6ec05878b0e7fd2a9c..540cdb3aaef9053e857d3e394162121c8bd1676b 100644
+index 76e857c364fe79e20cf9bde54b65e5b7108174fd..e655a0ebdade6e0b2e9c694566af6fb9f181d999 100644
 --- a/src/main/java/org/bukkit/entity/Entity.java
 +++ b/src/main/java/org/bukkit/entity/Entity.java
-@@ -696,4 +696,59 @@ public interface Entity extends Metadatable, CommandSender, Nameable, Persistent
+@@ -698,4 +698,59 @@ public interface Entity extends Metadatable, CommandSender, Nameable, Persistent
       */
      public boolean isTicking();
      // Paper end
@@ -73,7 +73,7 @@ index ff2e4fc8a632453e280f1a6ec05878b0e7fd2a9c..540cdb3aaef9053e857d3e394162121c
 +    // Rainforest end
  }
 diff --git a/src/main/java/org/bukkit/entity/Player.java b/src/main/java/org/bukkit/entity/Player.java
-index a23c08c48ec627147d94ab4bf4fdf4dae1edeaca..c3e89823899624323d29c4b17ce5295bbd07adfe 100644
+index cb6464c89e02d29484554a9a2184996a256925d2..16b9573591e94227581b386c00364e56a378f545 100644
 --- a/src/main/java/org/bukkit/entity/Player.java
 +++ b/src/main/java/org/bukkit/entity/Player.java
 @@ -25,6 +25,7 @@ import org.bukkit.advancement.Advancement;
@@ -84,7 +84,7 @@ index a23c08c48ec627147d94ab4bf4fdf4dae1edeaca..c3e89823899624323d29c4b17ce5295b
  import org.bukkit.event.player.PlayerResourcePackStatusEvent;
  import org.bukkit.inventory.ItemStack;
  import org.bukkit.map.MapView;
-@@ -1925,4 +1926,27 @@ public interface Player extends HumanEntity, Conversable, OfflinePlayer, PluginM
+@@ -1938,4 +1939,27 @@ public interface Player extends HumanEntity, Conversable, OfflinePlayer, PluginM
      @Override
      Spigot spigot();
      // Spigot end

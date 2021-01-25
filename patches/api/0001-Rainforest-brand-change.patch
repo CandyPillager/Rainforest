@@ -8,7 +8,7 @@ Subject: [PATCH] Rainforest brand change
  1 file changed, 6 insertions(+), 6 deletions(-)
 
 diff --git a/pom.xml b/pom.xml
-index 1c33b1f4d2366116dd45478b8ad9cdb51fd6bb57..266e5c84b53cc0d909dcbb97538e30f2c333566f 100644
+index 6c6ae6b48094c86c74cd4e9f4214056f63e6ac68..19c7edf5c2368e99a1e421d0de95d345da71e3ca 100644
 --- a/pom.xml
 +++ b/pom.xml
 @@ -3,18 +3,18 @@
@@ -26,7 +26,7 @@ index 1c33b1f4d2366116dd45478b8ad9cdb51fd6bb57..266e5c84b53cc0d909dcbb97538e30f2
 -    <groupId>com.destroystokyo.paper</groupId>
 -    <artifactId>paper-api</artifactId>
 +    <artifactId>rainforest-api</artifactId> <!-- Rainforest -->
-     <version>1.16.4-R0.1-SNAPSHOT</version>
+     <version>1.16.5-R0.1-SNAPSHOT</version>
      <packaging>jar</packaging>
  
 -    <name>Paper-API</name>
