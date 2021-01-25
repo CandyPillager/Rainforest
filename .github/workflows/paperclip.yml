@@ -9,17 +9,17 @@ jobs:
         runs-on: ubuntu-latest
         strategy:
             matrix:
-                java: [14, 8]
+                java: [15, 8]
 
             fail-fast: true
         steps:
-            - uses: actions/checkout@v2.3.1
+            - uses: actions/checkout@v2
             - name: JDK ${{ matrix.java }}
-              uses: actions/setup-java@v1.3.0
+              uses: actions/setup-java@v1
               with:
                   java-version: ${{ matrix.java }}
             - name: Caching maven repo
-              uses: actions/cache@v2.0.0
+              uses: actions/cache@v2
               with:
                   path: ~/.m2/repository
                   key: ${{ runner.os }}-paperclip-${{ hashFiles('**/pom.xml') }}
